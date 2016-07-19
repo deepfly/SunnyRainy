@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8B1D3DCE4000E87EAC /* main.m */; };
+		BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */; };
+		BAFD6D921D3DCE4000E87EAC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */; };
+		BAFD6D951D3DCE4000E87EAC /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D941D3DCE4000E87EAC /* SecondViewController.m */; };
+		BAFD6D981D3DCE4000E87EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D961D3DCE4000E87EAC /* Main.storyboard */; };
+		BAFD6D9A1D3DCE4000E87EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */; };
+		BAFD6D9D1D3DCE4000E87EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */; };
+		BAFD6DA81D3DCE4000E87EAC /* SunnyRainyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6DA71D3DCE4000E87EAC /* SunnyRainyTests.m */; };
+		BAFD6DB31D3DCE4000E87EAC /* SunnyRainyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6DB21D3DCE4000E87EAC /* SunnyRainyUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAFD6DA41D3DCE4000E87EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAFD6D7F1D3DCE4000E87EAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAFD6D861D3DCE4000E87EAC;
+			remoteInfo = SunnyRainy;
+		};
+		BAFD6DAF1D3DCE4000E87EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAFD6D7F1D3DCE4000E87EAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAFD6D861D3DCE4000E87EAC;
+			remoteInfo = SunnyRainy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAFD6D871D3DCE4000E87EAC /* SunnyRainy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyRainy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFD6D8B1D3DCE4000E87EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BAFD6D901D3DCE4000E87EAC /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		BAFD6D931D3DCE4000E87EAC /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		BAFD6D941D3DCE4000E87EAC /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		BAFD6D971D3DCE4000E87EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAFD6D9C1D3DCE4000E87EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BAFD6D9E1D3DCE4000E87EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFD6DA31D3DCE4000E87EAC /* SunnyRainyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyRainyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFD6DA71D3DCE4000E87EAC /* SunnyRainyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SunnyRainyTests.m; sourceTree = "<group>"; };
+		BAFD6DA91D3DCE4000E87EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFD6DAE1D3DCE4000E87EAC /* SunnyRainyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyRainyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFD6DB21D3DCE4000E87EAC /* SunnyRainyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SunnyRainyUITests.m; sourceTree = "<group>"; };
+		BAFD6DB41D3DCE4000E87EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAFD6D841D3DCE4000E87EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFD6DA01D3DCE4000E87EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFD6DAB1D3DCE4000E87EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAFD6D7E1D3DCE4000E87EAC = {
+			isa = PBXGroup;
+			children = (
+				BAFD6D891D3DCE4000E87EAC /* SunnyRainy */,
+				BAFD6DA61D3DCE4000E87EAC /* SunnyRainyTests */,
+				BAFD6DB11D3DCE4000E87EAC /* SunnyRainyUITests */,
+				BAFD6D881D3DCE4000E87EAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAFD6D881D3DCE4000E87EAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD6D871D3DCE4000E87EAC /* SunnyRainy.app */,
+				BAFD6DA31D3DCE4000E87EAC /* SunnyRainyTests.xctest */,
+				BAFD6DAE1D3DCE4000E87EAC /* SunnyRainyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAFD6D891D3DCE4000E87EAC /* SunnyRainy */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */,
+				BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */,
+				BAFD6D901D3DCE4000E87EAC /* FirstViewController.h */,
+				BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */,
+				BAFD6D931D3DCE4000E87EAC /* SecondViewController.h */,
+				BAFD6D941D3DCE4000E87EAC /* SecondViewController.m */,
+				BAFD6D961D3DCE4000E87EAC /* Main.storyboard */,
+				BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */,
+				BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */,
+				BAFD6D9E1D3DCE4000E87EAC /* Info.plist */,
+				BAFD6D8A1D3DCE4000E87EAC /* Supporting Files */,
+			);
+			path = SunnyRainy;
+			sourceTree = "<group>";
+		};
+		BAFD6D8A1D3DCE4000E87EAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD6D8B1D3DCE4000E87EAC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAFD6DA61D3DCE4000E87EAC /* SunnyRainyTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD6DA71D3DCE4000E87EAC /* SunnyRainyTests.m */,
+				BAFD6DA91D3DCE4000E87EAC /* Info.plist */,
+			);
+			path = SunnyRainyTests;
+			sourceTree = "<group>";
+		};
+		BAFD6DB11D3DCE4000E87EAC /* SunnyRainyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD6DB21D3DCE4000E87EAC /* SunnyRainyUITests.m */,
+				BAFD6DB41D3DCE4000E87EAC /* Info.plist */,
+			);
+			path = SunnyRainyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAFD6D861D3DCE4000E87EAC /* SunnyRainy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFD6DB71D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainy" */;
+			buildPhases = (
+				BAFD6D831D3DCE4000E87EAC /* Sources */,
+				BAFD6D841D3DCE4000E87EAC /* Frameworks */,
+				BAFD6D851D3DCE4000E87EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunnyRainy;
+			productName = SunnyRainy;
+			productReference = BAFD6D871D3DCE4000E87EAC /* SunnyRainy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAFD6DA21D3DCE4000E87EAC /* SunnyRainyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFD6DBA1D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainyTests" */;
+			buildPhases = (
+				BAFD6D9F1D3DCE4000E87EAC /* Sources */,
+				BAFD6DA01D3DCE4000E87EAC /* Frameworks */,
+				BAFD6DA11D3DCE4000E87EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAFD6DA51D3DCE4000E87EAC /* PBXTargetDependency */,
+			);
+			name = SunnyRainyTests;
+			productName = SunnyRainyTests;
+			productReference = BAFD6DA31D3DCE4000E87EAC /* SunnyRainyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BAFD6DAD1D3DCE4000E87EAC /* SunnyRainyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFD6DBD1D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainyUITests" */;
+			buildPhases = (
+				BAFD6DAA1D3DCE4000E87EAC /* Sources */,
+				BAFD6DAB1D3DCE4000E87EAC /* Frameworks */,
+				BAFD6DAC1D3DCE4000E87EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAFD6DB01D3DCE4000E87EAC /* PBXTargetDependency */,
+			);
+			name = SunnyRainyUITests;
+			productName = SunnyRainyUITests;
+			productReference = BAFD6DAE1D3DCE4000E87EAC /* SunnyRainyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAFD6D7F1D3DCE4000E87EAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Ziping Zheng";
+				TargetAttributes = {
+					BAFD6D861D3DCE4000E87EAC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					BAFD6DA21D3DCE4000E87EAC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = BAFD6D861D3DCE4000E87EAC;
+					};
+					BAFD6DAD1D3DCE4000E87EAC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = BAFD6D861D3DCE4000E87EAC;
+					};
+				};
+			};
+			buildConfigurationList = BAFD6D821D3DCE4000E87EAC /* Build configuration list for PBXProject "SunnyRainy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAFD6D7E1D3DCE4000E87EAC;
+			productRefGroup = BAFD6D881D3DCE4000E87EAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAFD6D861D3DCE4000E87EAC /* SunnyRainy */,
+				BAFD6DA21D3DCE4000E87EAC /* SunnyRainyTests */,
+				BAFD6DAD1D3DCE4000E87EAC /* SunnyRainyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAFD6D851D3DCE4000E87EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFD6D9D1D3DCE4000E87EAC /* LaunchScreen.storyboard in Resources */,
+				BAFD6D9A1D3DCE4000E87EAC /* Assets.xcassets in Resources */,
+				BAFD6D981D3DCE4000E87EAC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFD6DA11D3DCE4000E87EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFD6DAC1D3DCE4000E87EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAFD6D831D3DCE4000E87EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFD6D951D3DCE4000E87EAC /* SecondViewController.m in Sources */,
+				BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */,
+				BAFD6D921D3DCE4000E87EAC /* FirstViewController.m in Sources */,
+				BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFD6D9F1D3DCE4000E87EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFD6DA81D3DCE4000E87EAC /* SunnyRainyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFD6DAA1D3DCE4000E87EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFD6DB31D3DCE4000E87EAC /* SunnyRainyUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAFD6DA51D3DCE4000E87EAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAFD6D861D3DCE4000E87EAC /* SunnyRainy */;
+			targetProxy = BAFD6DA41D3DCE4000E87EAC /* PBXContainerItemProxy */;
+		};
+		BAFD6DB01D3DCE4000E87EAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAFD6D861D3DCE4000E87EAC /* SunnyRainy */;
+			targetProxy = BAFD6DAF1D3DCE4000E87EAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAFD6D961D3DCE4000E87EAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFD6D971D3DCE4000E87EAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFD6D9C1D3DCE4000E87EAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAFD6DB51D3DCE4000E87EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BAFD6DB61D3DCE4000E87EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAFD6DB81D3DCE4000E87EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SunnyRainy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAFD6DB91D3DCE4000E87EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SunnyRainy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BAFD6DBB1D3DCE4000E87EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SunnyRainyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunnyRainy.app/SunnyRainy";
+			};
+			name = Debug;
+		};
+		BAFD6DBC1D3DCE4000E87EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SunnyRainyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunnyRainy.app/SunnyRainy";
+			};
+			name = Release;
+		};
+		BAFD6DBE1D3DCE4000E87EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SunnyRainyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SunnyRainy;
+			};
+			name = Debug;
+		};
+		BAFD6DBF1D3DCE4000E87EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SunnyRainyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SunnyRainy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAFD6D821D3DCE4000E87EAC /* Build configuration list for PBXProject "SunnyRainy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFD6DB51D3DCE4000E87EAC /* Debug */,
+				BAFD6DB61D3DCE4000E87EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAFD6DB71D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFD6DB81D3DCE4000E87EAC /* Debug */,
+				BAFD6DB91D3DCE4000E87EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAFD6DBA1D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFD6DBB1D3DCE4000E87EAC /* Debug */,
+				BAFD6DBC1D3DCE4000E87EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAFD6DBD1D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFD6DBE1D3DCE4000E87EAC /* Debug */,
+				BAFD6DBF1D3DCE4000E87EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAFD6D7F1D3DCE4000E87EAC /* Project object */;
+}
