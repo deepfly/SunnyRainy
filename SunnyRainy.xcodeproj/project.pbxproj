@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1994AD1D40197E0015E93D /* AVKit.framework */; };
 		BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8B1D3DCE4000E87EAC /* main.m */; };
 		BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */; };
 		BAFD6D921D3DCE4000E87EAC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA1994AD1D40197E0015E93D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		BAFD6D871D3DCE4000E87EAC /* SunnyRainy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyRainy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFD6D8B1D3DCE4000E87EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		BAFD6D7E1D3DCE4000E87EAC = {
 			isa = PBXGroup;
 			children = (
+				BA1994AD1D40197E0015E93D /* AVKit.framework */,
 				BAFD6D891D3DCE4000E87EAC /* SunnyRainy */,
 				BAFD6DA61D3DCE4000E87EAC /* SunnyRainyTests */,
 				BAFD6DB11D3DCE4000E87EAC /* SunnyRainyUITests */,
@@ -420,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SunnyRainy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SunnyRainy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -502,6 +508,7 @@
 				BAFD6DB91D3DCE4000E87EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAFD6DBA1D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainyTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				BAFD6DBC1D3DCE4000E87EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAFD6DBD1D3DCE4000E87EAC /* Build configuration list for PBXNativeTarget "SunnyRainyUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				BAFD6DBF1D3DCE4000E87EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
