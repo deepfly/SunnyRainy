@@ -6,16 +6,16 @@
 //  Copyright © 2016 Ziping Zheng. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "MoodViewController.h"
 
-@interface FirstViewController ()
+@interface MoodViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *temperatureText;
 @property (strong, nonatomic) IBOutlet UIImageView *weatherImage;
 @property (strong, nonatomic) IBOutlet UIView *playerContainer;
 
 @end
 
-@implementation FirstViewController
+@implementation MoodViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

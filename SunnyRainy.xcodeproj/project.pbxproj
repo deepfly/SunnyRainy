@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1994AD1D40197E0015E93D /* AVKit.framework */; };
+		BA1994B11D4073950015E93D /* MySongListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B01D4073950015E93D /* MySongListsViewController.m */; };
+		BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B31D4074000015E93D /* PersonalInfoViewController.m */; };
+		BA1994B71D4074B30015E93D /* MySongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B61D4074B30015E93D /* MySongListViewController.m */; };
+		BA1994BA1D4075890015E93D /* MoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B91D4075890015E93D /* MoodViewController.m */; };
+		BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */; };
+		BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB5F91D40949600FD3D61 /* PortraitCell.m */; };
 		BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8B1D3DCE4000E87EAC /* main.m */; };
 		BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */; };
-		BAFD6D921D3DCE4000E87EAC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */; };
-		BAFD6D951D3DCE4000E87EAC /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D941D3DCE4000E87EAC /* SecondViewController.m */; };
 		BAFD6D981D3DCE4000E87EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D961D3DCE4000E87EAC /* Main.storyboard */; };
 		BAFD6D9A1D3DCE4000E87EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */; };
 		BAFD6D9D1D3DCE4000E87EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */; };
@@ -38,14 +42,22 @@
 
 /* Begin PBXFileReference section */
 		BA1994AD1D40197E0015E93D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		BA1994AF1D4073950015E93D /* MySongListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySongListsViewController.h; sourceTree = "<group>"; };
+		BA1994B01D4073950015E93D /* MySongListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySongListsViewController.m; sourceTree = "<group>"; };
+		BA1994B21D4074000015E93D /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		BA1994B31D4074000015E93D /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
+		BA1994B51D4074B30015E93D /* MySongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySongListViewController.h; sourceTree = "<group>"; };
+		BA1994B61D4074B30015E93D /* MySongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySongListViewController.m; sourceTree = "<group>"; };
+		BA1994B81D4075890015E93D /* MoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodViewController.h; sourceTree = "<group>"; };
+		BA1994B91D4075890015E93D /* MoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodViewController.m; sourceTree = "<group>"; };
+		BA3BB5F51D40810300FD3D61 /* ChangeNicknameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNicknameController.h; sourceTree = "<group>"; };
+		BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNicknameController.m; sourceTree = "<group>"; };
+		BA3BB5F81D40949600FD3D61 /* PortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitCell.h; sourceTree = "<group>"; };
+		BA3BB5F91D40949600FD3D61 /* PortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitCell.m; sourceTree = "<group>"; };
 		BAFD6D871D3DCE4000E87EAC /* SunnyRainy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyRainy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFD6D8B1D3DCE4000E87EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BAFD6D901D3DCE4000E87EAC /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		BAFD6D931D3DCE4000E87EAC /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		BAFD6D941D3DCE4000E87EAC /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		BAFD6D971D3DCE4000E87EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAFD6D9C1D3DCE4000E87EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,6 +96,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA3BB5F21D40802F00FD3D61 /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				BA1994B81D4075890015E93D /* MoodViewController.h */,
+				BA1994B91D4075890015E93D /* MoodViewController.m */,
+			);
+			name = Mood;
+			sourceTree = "<group>";
+		};
+		BA3BB5F31D40803F00FD3D61 /* FInd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FInd;
+			sourceTree = "<group>";
+		};
+		BA3BB5F41D40804500FD3D61 /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BA1994B21D4074000015E93D /* PersonalInfoViewController.h */,
+				BA1994B31D4074000015E93D /* PersonalInfoViewController.m */,
+				BA1994AF1D4073950015E93D /* MySongListsViewController.h */,
+				BA1994B01D4073950015E93D /* MySongListsViewController.m */,
+				BA1994B51D4074B30015E93D /* MySongListViewController.h */,
+				BA1994B61D4074B30015E93D /* MySongListViewController.m */,
+				BA3BB5F51D40810300FD3D61 /* ChangeNicknameController.h */,
+				BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */,
+				BA3BB5F81D40949600FD3D61 /* PortraitCell.h */,
+				BA3BB5F91D40949600FD3D61 /* PortraitCell.m */,
+			);
+			name = PersonalInfo;
+			sourceTree = "<group>";
+		};
 		BAFD6D7E1D3DCE4000E87EAC = {
 			isa = PBXGroup;
 			children = (
@@ -108,12 +153,11 @@
 		BAFD6D891D3DCE4000E87EAC /* SunnyRainy */ = {
 			isa = PBXGroup;
 			children = (
+				BA3BB5F41D40804500FD3D61 /* PersonalInfo */,
+				BA3BB5F31D40803F00FD3D61 /* FInd */,
+				BA3BB5F21D40802F00FD3D61 /* Mood */,
 				BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */,
 				BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */,
-				BAFD6D901D3DCE4000E87EAC /* FirstViewController.h */,
-				BAFD6D911D3DCE4000E87EAC /* FirstViewController.m */,
-				BAFD6D931D3DCE4000E87EAC /* SecondViewController.h */,
-				BAFD6D941D3DCE4000E87EAC /* SecondViewController.m */,
 				BAFD6D961D3DCE4000E87EAC /* Main.storyboard */,
 				BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */,
 				BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */,
@@ -279,10 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAFD6D951D3DCE4000E87EAC /* SecondViewController.m in Sources */,
+				BA1994B11D4073950015E93D /* MySongListsViewController.m in Sources */,
+				BA1994BA1D4075890015E93D /* MoodViewController.m in Sources */,
+				BA1994B71D4074B30015E93D /* MySongListViewController.m in Sources */,
 				BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */,
-				BAFD6D921D3DCE4000E87EAC /* FirstViewController.m in Sources */,
+				BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */,
 				BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */,
+				BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */,
+				BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
