@@ -11,6 +11,8 @@
 @interface ChooseSongViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property(copy, nonatomic) NSArray* songs;
+@property(copy, nonatomic) NSMutableDictionary *songsDict;
+@property(copy, nonatomic) NSArray *songSectionTitles;
 @property(nonatomic) NSInteger* selectedRow;
 
 @end

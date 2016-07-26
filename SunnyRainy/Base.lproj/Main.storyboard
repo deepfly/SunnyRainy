@@ -114,18 +114,18 @@
                                 <exclude reference="qNr-jI-ep4"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7od-ZR-6xA"/>
-                                <exclude reference="Q64-tG-DZM"/>
-                                <exclude reference="TCn-im-Kc0"/>
-                                <exclude reference="KLu-bs-MyD"/>
-                                <exclude reference="Rrh-mL-DtW"/>
                                 <exclude reference="XRX-9t-5QG"/>
                                 <exclude reference="Ozu-tc-4m9"/>
                                 <exclude reference="W9h-z1-jMd"/>
                                 <exclude reference="skb-op-n02"/>
+                                <exclude reference="7od-ZR-6xA"/>
+                                <exclude reference="Q64-tG-DZM"/>
+                                <exclude reference="TCn-im-Kc0"/>
                                 <exclude reference="Frc-JH-6fm"/>
                                 <exclude reference="Qg4-jD-6MM"/>
                                 <exclude reference="rqb-yb-0hf"/>
+                                <exclude reference="KLu-bs-MyD"/>
+                                <exclude reference="Rrh-mL-DtW"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -136,18 +136,18 @@
                                 <include reference="qNr-jI-ep4"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7od-ZR-6xA"/>
-                                <include reference="Q64-tG-DZM"/>
-                                <include reference="TCn-im-Kc0"/>
-                                <include reference="KLu-bs-MyD"/>
-                                <include reference="Rrh-mL-DtW"/>
                                 <include reference="XRX-9t-5QG"/>
                                 <include reference="Ozu-tc-4m9"/>
                                 <include reference="W9h-z1-jMd"/>
                                 <include reference="skb-op-n02"/>
+                                <include reference="7od-ZR-6xA"/>
+                                <include reference="Q64-tG-DZM"/>
+                                <include reference="TCn-im-Kc0"/>
                                 <include reference="Frc-JH-6fm"/>
                                 <include reference="Qg4-jD-6MM"/>
                                 <include reference="rqb-yb-0hf"/>
+                                <include reference="KLu-bs-MyD"/>
+                                <include reference="Rrh-mL-DtW"/>
                             </mask>
                         </variation>
                     </view>
@@ -547,7 +547,7 @@
                                 <state key="normal" image="Add User Group Man Man Filled-50"/>
                                 <connections>
                                     <action selector="createHost:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="ucZ-Hg-mOU"/>
-                                    <segue destination="xPN-Dm-NA3" kind="push" id="NcS-E5-Gf1"/>
+                                    <segue destination="e3L-rU-MMh" kind="push" id="iG4-pP-vf2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -569,14 +569,14 @@
                                 <exclude reference="16V-Q2-SbQ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="3Di-cN-onR"/>
+                                <exclude reference="hNW-n8-tRV"/>
+                                <exclude reference="1xR-3c-anM"/>
+                                <exclude reference="BQB-CC-gI1"/>
                                 <exclude reference="0O9-TH-PyR"/>
                                 <exclude reference="5bj-ku-aAl"/>
                                 <exclude reference="iEs-we-D5h"/>
                                 <exclude reference="rxM-wo-yFp"/>
-                                <exclude reference="1xR-3c-anM"/>
-                                <exclude reference="BQB-CC-gI1"/>
-                                <exclude reference="3Di-cN-onR"/>
-                                <exclude reference="hNW-n8-tRV"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -586,14 +586,14 @@
                                 <include reference="16V-Q2-SbQ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="3Di-cN-onR"/>
+                                <include reference="hNW-n8-tRV"/>
+                                <include reference="1xR-3c-anM"/>
+                                <include reference="BQB-CC-gI1"/>
                                 <include reference="0O9-TH-PyR"/>
                                 <include reference="5bj-ku-aAl"/>
                                 <include reference="iEs-we-D5h"/>
                                 <include reference="rxM-wo-yFp"/>
-                                <include reference="1xR-3c-anM"/>
-                                <include reference="BQB-CC-gI1"/>
-                                <include reference="3Di-cN-onR"/>
-                                <include reference="hNW-n8-tRV"/>
                             </mask>
                         </variation>
                     </view>
@@ -606,66 +606,20 @@
             </objects>
             <point key="canvasLocation" x="1668" y="-1021"/>
         </scene>
-        <!--Select a song list-->
-        <scene sceneID="iWg-6j-9fM">
-            <objects>
-                <tableViewController id="xPN-Dm-NA3" customClass="SelectSongListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vtR-3o-wsI">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listsCell" textLabel="tE3-83-O7p" detailTextLabel="sc4-LK-1sT" style="IBUITableViewCellStyleSubtitle" id="VRt-0Y-8dt">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VRt-0Y-8dt" id="lRw-JZ-OTk">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tE3-83-O7p">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact">
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sc4-LK-1sT">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact">
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            </variation>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="e3L-rU-MMh" kind="push" id="KDc-Dc-yqB"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xPN-Dm-NA3" id="6Yc-qG-LXO"/>
-                            <outlet property="delegate" destination="xPN-Dm-NA3" id="b5e-UE-NqB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Select a song list" id="SJC-B2-xHa"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qmi-JI-VWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2466" y="-1026"/>
-        </scene>
         <!--Select a song-->
         <scene sceneID="vAx-5A-ekY">
             <objects>
                 <tableViewController id="e3L-rU-MMh" customClass="ChooseSongViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xoJ-oz-wzK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" id="xbl-7u-YzA">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xbl-7u-YzA" id="6RB-up-ojR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

@@ -22,8 +22,33 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.songs = @[@"Song 1", @"Song 2", @"Song 3", @"Song 4"];
+//    self.songs = @[@"A song1", @"A song2", @"A song3", @"A song4", @"Blue1", @"Blue2", @"Blue3", @"Cat1", @"Cat2", @"Cat3", @"Song 1", @"Song 2", @"Song 3", @"Song 4", @"Music1", @"Music2", @"Music3", @"Music4", @"Music5"];
+    self.songs = @[@"Camel", @"Cockatoo", @"Dog", @"Donkey", @"Emu", @"Giraffe", @"Greater Rhea", @"Hippopotamus", @"Horse", @"Koala", @"Lion", @"Llama", @"Manatus", @"Meerkat", @"Panda", @"Peacock", @"Pig", @"Platypus", @"Polar Bear", @"Rhinoceros", @"Seagull", @"Tasmania Devil", @"Whale", @"Whale Shark", @"Wombat", @"Buffalo", @"Bear", @"Black Swan"];
+    _songs = [_songs sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    _songsDict = [NSMutableDictionary new];
+    
+    for (NSString *str in _songs) {
+        NSString *key = [[str substringToIndex:1] capitalizedString];
+        NSMutableArray *arr;
+        if([_songsDict objectForKey:key]){
+            arr = [_songsDict objectForKey:key];
+        } else {
+            arr = [NSMutableArray new];
+        }
+        [arr addObject:str];
+//        NSLog(@"%@ %i",key, [arr count]);
+        [_songsDict setObject:arr forKey:key];
+    }
+    
+    _songSectionTitles = [[_songsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
     _selectedRow = -1;
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return _songSectionTitles;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,12 +60,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 1;
+    return [_songSectionTitles count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [_songSectionTitles objectAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return [_songs count];
+    NSString *sectionTitle = [_songSectionTitles objectAtIndex:section];
+    NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
+    return [sectionSongs count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -51,24 +83,38 @@
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleIdentifier];
     }
-    //    NSLog(@"%i", [indexPath row]);
-    cell.textLabel.text = _songs[[indexPath row]];
+    NSString *sectionTitle = [_songSectionTitles objectAtIndex:indexPath.section];
+    NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
+    NSString *songName = [sectionSongs objectAtIndex:indexPath.row];
+    cell.textLabel.text = songName;
     
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        _selectedRow = -1;
-    } else {
-        if (_selectedRow != -1) {
-            NSIndexPath *selectedIP = [NSIndexPath indexPathForRow:_selectedRow inSection:0];
-            [tableView cellForRowAtIndexPath:selectedIP].accessoryType = UITableViewCellAccessoryNone;
+    NSString *sectionTitle = [_songSectionTitles objectAtIndex:indexPath.section];
+    NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
+    NSString *songName = [sectionSongs objectAtIndex:indexPath.row];
+    NSString *msg = [NSString stringWithFormat:@"Do you really want to use \"%@\" to create your host?", songName];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Choose this song"
+                                                    message:msg delegate:self cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+    alert.tag = 0;
+    [alert show];
+
+    [tableView cellForRowAtIndexPath:indexPath].selected = false;
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    // Is this my Alert View?
+    if (alertView.tag == 0) {
+        if (buttonIndex == 0) {// Cancel Button
+//            [self submitData];
+            
         }
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        _selectedRow = indexPath.row;
+        else if (buttonIndex == 1) {// OK Button
+            
+        }
     }
 }
 
