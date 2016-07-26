@@ -61,12 +61,16 @@ CLLocationManager *locationManager;
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error) {
-                 NSLog(@"fetched user:%@", result);
+                 //NSLog(@"fetched user:%@", result);
                  NSString *user_name = result[@"name"];
                  NSString *fb_id = result[@"id"];
                  NSString *avatar = [[NSString alloc] initWithFormat: @"http://graph.facebook.com/%@/picture?type=large", fb_id];
                  
                  NSLog(@"name: %@, fb_id: %@, avatar: %@", user_name, fb_id, avatar);
+                 
+                 // Save user info
+                 [[NSUserDefaults standardUserDefaults] setValue:user_name forKey:@"user_name"];
+                 [[NSUserDefaults standardUserDefaults] setValue:avatar forKey:@"avatar"];
              }
          }];
     }
