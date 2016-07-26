@@ -7,6 +7,8 @@
 //
 
 #import "MoodViewController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface MoodViewController ()
 
@@ -24,6 +26,10 @@ CLLocationManager *locationManager;
                            barMetrics:UIBarMetricsDefault];
     [navigationBar setShadowImage:[UIImage new]];
     
+    // Facebook login
+    [self.btnLogin addTarget:self action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     // Init locationManager
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -31,6 +37,39 @@ CLLocationManager *locationManager;
     [locationManager startUpdatingLocation];
     
     [self getLocalWeather];
+}
+
+// Once the button is clicked, show the login dialog
+- (void)loginButtonClicked {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Facebook Log in error: %@", error);
+         } else if (result.isCancelled) {
+             NSLog(@"Facebook Log in cancelled");
+         } else {
+             [self getUserProfile];
+         }
+     }];
+}
+
+- (void)getUserProfile {
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 NSLog(@"fetched user:%@", result);
+                 NSString *user_name = result[@"name"];
+                 NSString *fb_id = result[@"id"];
+                 NSString *avatar = [[NSString alloc] initWithFormat: @"http://graph.facebook.com/%@/picture?type=large", fb_id];
+                 
+                 NSLog(@"name: %@, fb_id: %@, avatar: %@", user_name, fb_id, avatar);
+             }
+         }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

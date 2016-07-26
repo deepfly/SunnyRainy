@@ -44,17 +44,24 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTI-F2-WKn">
+                                <rect key="frame" x="196" y="420" width="208" height="50"/>
+                                <state key="normal" backgroundImage="facebook-login-blue"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XXu-HZ-6Vg" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="5cF-O8-PPN"/>
                             <constraint firstItem="7yk-1e-oW4" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="5rB-N4-Vtt"/>
+                            <constraint firstItem="BTI-F2-WKn" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nd3-fI-OP0"/>
                             <constraint firstItem="7yk-1e-oW4" firstAttribute="top" secondItem="XXu-HZ-6Vg" secondAttribute="bottom" constant="50" id="Ogb-lz-vZ5"/>
+                            <constraint firstItem="BTI-F2-WKn" firstAttribute="top" secondItem="7yk-1e-oW4" secondAttribute="bottom" constant="50" id="Sul-WP-Qa5"/>
                             <constraint firstItem="XXu-HZ-6Vg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="znQ-G1-TeE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="S U N N Y R A I N Y" id="lLd-vE-Y7D"/>
                     <connections>
+                        <outlet property="btnLogin" destination="BTI-F2-WKn" id="RPC-rF-h2L"/>
                         <outlet property="imgWeather" destination="XXu-HZ-6Vg" id="Ikm-bf-AQE"/>
                         <outlet property="lblWeather" destination="7yk-1e-oW4" id="5kz-6b-rdh"/>
                     </connections>
@@ -627,6 +634,7 @@
         <image name="Add User Group Man Man Filled-50" width="50" height="50"/>
         <image name="Radar Filled-50" width="50" height="50"/>
         <image name="clear-day" width="170" height="170"/>
+        <image name="facebook-login-blue" width="208" height="50"/>
         <image name="host-120" width="30" height="30"/>
         <image name="me-120" width="30" height="30"/>
         <image name="sun" width="128" height="128"/>
