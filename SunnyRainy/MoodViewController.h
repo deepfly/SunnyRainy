@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVKit/AVKit.h>
+#import <MediaPlayer/MediaPlayer.h>. 
+#import <AVFoundation/AVAudioPlayer.h> 
 
-@interface FirstViewController : UIViewController
+@interface MoodViewController : UIViewController
 
 
 @end
