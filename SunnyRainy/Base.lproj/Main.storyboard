@@ -6,7 +6,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Mood Player-->
+        <!--S U N N Y R A I N Y-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MoodViewController" sceneMemberID="viewController">
@@ -18,35 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huU-qw-KuJ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="huU-qw-KuJ" secondAttribute="height" multiplier="15:8" id="DUO-PT-bcV"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="DUO-PT-bcV"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="DUO-PT-bcV"/>
-                                    </mask>
-                                </variation>
-                            </containerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="24 ℃ " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iky-b2-aFg">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
-                                </variation>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sun_strong_bold" translatesAutoresizingMaskIntoConstraints="NO" id="XXu-HZ-6Vg">
-                                <rect key="frame" x="33" y="116" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.26274509800000001" green="0.61568627450000002" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="XXu-HZ-6Vg">
+                                <rect key="frame" x="236" y="114" width="128" height="128"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bBG-8v-ueo"/>
                                     <constraint firstAttribute="width" secondItem="XXu-HZ-6Vg" secondAttribute="height" multiplier="400:383" id="huK-le-5TF"/>
@@ -64,99 +38,25 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SUNNY 30℃ / 15℃   / 15" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xwQ-KB-6dJ">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sunny 30 °C / 86 °F " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-1e-oW4">
+                                <rect key="frame" x="165" y="292" width="271" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicPlayer" translatesAutoresizingMaskIntoConstraints="NO" id="qNr-jI-ep4">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qNr-jI-ep4" secondAttribute="height" multiplier="15:8" id="lwZ-MJ-ROZ"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lwZ-MJ-ROZ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="lwZ-MJ-ROZ"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.2627450980392157" green="0.61568627450980395" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="iky-b2-aFg" firstAttribute="top" secondItem="xwQ-KB-6dJ" secondAttribute="top" constant="-100" id="7od-ZR-6xA"/>
-                            <constraint firstAttribute="trailing" secondItem="qNr-jI-ep4" secondAttribute="trailing" id="Frc-JH-6fm"/>
-                            <constraint firstItem="XXu-HZ-6Vg" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="100" id="KLu-bs-MyD"/>
-                            <constraint firstAttribute="bottom" secondItem="huU-qw-KuJ" secondAttribute="bottom" id="Ozu-tc-4m9"/>
-                            <constraint firstItem="iky-b2-aFg" firstAttribute="top" secondItem="XXu-HZ-6Vg" secondAttribute="top" id="Q64-tG-DZM"/>
-                            <constraint firstAttribute="bottom" secondItem="qNr-jI-ep4" secondAttribute="bottom" id="Qg4-jD-6MM"/>
-                            <constraint firstItem="XXu-HZ-6Vg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-80" id="Rrh-mL-DtW"/>
-                            <constraint firstItem="iky-b2-aFg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="50" id="TCn-im-Kc0"/>
-                            <constraint firstAttribute="trailing" secondItem="huU-qw-KuJ" secondAttribute="trailing" id="W9h-z1-jMd"/>
-                            <constraint firstItem="xwQ-KB-6dJ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="50" id="XRX-9t-5QG"/>
-                            <constraint firstItem="qNr-jI-ep4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="rqb-yb-0hf"/>
-                            <constraint firstItem="huU-qw-KuJ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="skb-op-n02"/>
+                            <constraint firstItem="XXu-HZ-6Vg" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="5cF-O8-PPN"/>
+                            <constraint firstItem="7yk-1e-oW4" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="5rB-N4-Vtt"/>
+                            <constraint firstItem="7yk-1e-oW4" firstAttribute="top" secondItem="XXu-HZ-6Vg" secondAttribute="bottom" constant="50" id="Ogb-lz-vZ5"/>
+                            <constraint firstItem="XXu-HZ-6Vg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="znQ-G1-TeE"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="huU-qw-KuJ"/>
-                                <exclude reference="iky-b2-aFg"/>
-                                <exclude reference="xwQ-KB-6dJ"/>
-                                <exclude reference="qNr-jI-ep4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="XRX-9t-5QG"/>
-                                <exclude reference="Ozu-tc-4m9"/>
-                                <exclude reference="W9h-z1-jMd"/>
-                                <exclude reference="skb-op-n02"/>
-                                <exclude reference="7od-ZR-6xA"/>
-                                <exclude reference="Q64-tG-DZM"/>
-                                <exclude reference="TCn-im-Kc0"/>
-                                <exclude reference="Frc-JH-6fm"/>
-                                <exclude reference="Qg4-jD-6MM"/>
-                                <exclude reference="rqb-yb-0hf"/>
-                                <exclude reference="KLu-bs-MyD"/>
-                                <exclude reference="Rrh-mL-DtW"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="huU-qw-KuJ"/>
-                                <include reference="iky-b2-aFg"/>
-                                <include reference="xwQ-KB-6dJ"/>
-                                <include reference="qNr-jI-ep4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="XRX-9t-5QG"/>
-                                <include reference="Ozu-tc-4m9"/>
-                                <include reference="W9h-z1-jMd"/>
-                                <include reference="skb-op-n02"/>
-                                <include reference="7od-ZR-6xA"/>
-                                <include reference="Q64-tG-DZM"/>
-                                <include reference="TCn-im-Kc0"/>
-                                <include reference="Frc-JH-6fm"/>
-                                <include reference="Qg4-jD-6MM"/>
-                                <include reference="rqb-yb-0hf"/>
-                                <include reference="KLu-bs-MyD"/>
-                                <include reference="Rrh-mL-DtW"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Mood Player" id="lLd-vE-Y7D"/>
+                    <navigationItem key="navigationItem" title="S U N N Y R A I N Y" id="lLd-vE-Y7D"/>
                     <connections>
-                        <outlet property="playerContainer" destination="huU-qw-KuJ" id="MJn-Wf-pq8"/>
-                        <outlet property="temperatureText" destination="iky-b2-aFg" id="xUm-gy-o0f"/>
+                        <outlet property="lblWeather" destination="7yk-1e-oW4" id="5kz-6b-rdh"/>
                         <outlet property="weatherImage" destination="XXu-HZ-6Vg" id="sQH-k6-8ye"/>
-                        <segue destination="EeV-JD-ahr" kind="push" identifier="songlist" id="QjO-pJ-hrt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -340,35 +240,6 @@
             </objects>
             <point key="canvasLocation" x="3529.5" y="567"/>
         </scene>
-        <!--Song List-->
-        <scene sceneID="viE-BQ-xeR">
-            <objects>
-                <tableViewController id="EeV-JD-ahr" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lm1-RK-Wxg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="goO-uS-dDR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="goO-uS-dDR" id="JWO-V6-QtQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EeV-JD-ahr" id="QoF-qt-KET"/>
-                            <outlet property="delegate" destination="EeV-JD-ahr" id="ege-6X-oAv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Song List" id="hp2-Wp-e8n"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WXN-LN-u29" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2461.5" y="-320"/>
-        </scene>
         <!--Me-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -547,7 +418,7 @@
                                 <state key="normal" image="Add User Group Man Man Filled-50"/>
                                 <connections>
                                     <action selector="createHost:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="ucZ-Hg-mOU"/>
-                                    <segue destination="e3L-rU-MMh" kind="push" id="iG4-pP-vf2"/>
+                                    <segue destination="e3L-rU-MMh" kind="push" id="nfT-fz-9wn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -633,17 +504,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KF4-J5-o28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3286.5" y="-1021"/>
+            <point key="canvasLocation" x="2448" y="-1021"/>
         </scene>
         <!--Mood-->
         <scene sceneID="nW9-9E-Jyk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DDc-X1-Mlk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mood" image="Music-50" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Mood" image="weather-120" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jze-8b-JBq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -658,7 +534,7 @@
         <scene sceneID="YgW-nV-rf5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3A8-l9-QeB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Personal Info" image="Contacts-50" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Personal Info" image="me-120" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X79-Bh-YMN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -677,7 +553,7 @@
         <scene sceneID="YgB-Lu-gtT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9IZ-bP-K9N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Find" image="Radar-50" id="87R-SA-Mdv"/>
+                    <tabBarItem key="tabBarItem" title="Find" image="host-120" id="87R-SA-Mdv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zv4-JF-m0p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -695,12 +571,10 @@
     </scenes>
     <resources>
         <image name="Add User Group Man Man Filled-50" width="50" height="50"/>
-        <image name="Contacts-50" width="25" height="25"/>
-        <image name="Music-50" width="25" height="25"/>
         <image name="Radar Filled-50" width="50" height="50"/>
-        <image name="Radar-50" width="25" height="25"/>
-        <image name="musicPlayer" width="234" height="108"/>
-        <image name="sun" width="122" height="121"/>
-        <image name="sun_strong_bold" width="800" height="766"/>
+        <image name="host-120" width="30" height="30"/>
+        <image name="me-120" width="30" height="30"/>
+        <image name="sun" width="128" height="128"/>
+        <image name="weather-120" width="40" height="40"/>
     </resources>
 </document>

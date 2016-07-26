@@ -1,6 +1,7 @@
 #This is the .gitignore file for SunnyRainy iOS.
 # Xcode
 .DS_Store
+SunnyRainy/.DS_Store
 */build/*
 _build/
 *.pbxuser

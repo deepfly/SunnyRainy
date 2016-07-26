@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BAC634F1D46F2260019E670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BAC634E1D46F2260019E670 /* Assets.xcassets */; };
 		BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1994AD1D40197E0015E93D /* AVKit.framework */; };
 		BA1994B11D4073950015E93D /* MySongListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B01D4073950015E93D /* MySongListsViewController.m */; };
 		BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B31D4074000015E93D /* PersonalInfoViewController.m */; };
@@ -21,7 +22,6 @@
 		BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8B1D3DCE4000E87EAC /* main.m */; };
 		BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */; };
 		BAFD6D981D3DCE4000E87EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D961D3DCE4000E87EAC /* Main.storyboard */; };
-		BAFD6D9A1D3DCE4000E87EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */; };
 		BAFD6D9D1D3DCE4000E87EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */; };
 		BAFD6DA81D3DCE4000E87EAC /* SunnyRainyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6DA71D3DCE4000E87EAC /* SunnyRainyTests.m */; };
 		BAFD6DB31D3DCE4000E87EAC /* SunnyRainyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6DB21D3DCE4000E87EAC /* SunnyRainyUITests.m */; };
@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BAC634E1D46F2260019E670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA1994AD1D40197E0015E93D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		BA1994AF1D4073950015E93D /* MySongListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySongListsViewController.h; sourceTree = "<group>"; };
 		BA1994B01D4073950015E93D /* MySongListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySongListsViewController.m; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BAFD6D971D3DCE4000E87EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAFD6D9C1D3DCE4000E87EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAFD6D9E1D3DCE4000E87EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAFD6DA31D3DCE4000E87EAC /* SunnyRainyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyRainyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +117,7 @@
 			name = Mood;
 			sourceTree = "<group>";
 		};
-		BA3BB5F31D40803F00FD3D61 /* FInd */ = {
+		BA3BB5F31D40803F00FD3D61 /* Find */ = {
 			isa = PBXGroup;
 			children = (
 				BA5FC68A1D42FC3B002434E4 /* FindController.h */,
@@ -127,7 +127,7 @@
 				BA4044DC1D431E850026CFEF /* ChooseSongViewController.h */,
 				BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */,
 			);
-			name = FInd;
+			name = Find;
 			sourceTree = "<group>";
 		};
 		BA3BB5F41D40804500FD3D61 /* PersonalInfo */ = {
@@ -173,12 +173,12 @@
 			isa = PBXGroup;
 			children = (
 				BA3BB5F41D40804500FD3D61 /* PersonalInfo */,
-				BA3BB5F31D40803F00FD3D61 /* FInd */,
+				BA3BB5F31D40803F00FD3D61 /* Find */,
 				BA3BB5F21D40802F00FD3D61 /* Mood */,
 				BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */,
 				BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */,
+				3BAC634E1D46F2260019E670 /* Assets.xcassets */,
 				BAFD6D961D3DCE4000E87EAC /* Main.storyboard */,
-				BAFD6D991D3DCE4000E87EAC /* Assets.xcassets */,
 				BAFD6D9B1D3DCE4000E87EAC /* LaunchScreen.storyboard */,
 				BAFD6D9E1D3DCE4000E87EAC /* Info.plist */,
 				BAFD6D8A1D3DCE4000E87EAC /* Supporting Files */,
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFD6D9D1D3DCE4000E87EAC /* LaunchScreen.storyboard in Resources */,
-				BAFD6D9A1D3DCE4000E87EAC /* Assets.xcassets in Resources */,
+				3BAC634F1D46F2260019E670 /* Assets.xcassets in Resources */,
 				BAFD6D981D3DCE4000E87EAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
