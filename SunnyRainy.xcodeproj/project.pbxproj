@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3BAC634F1D46F2260019E670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BAC634E1D46F2260019E670 /* Assets.xcassets */; };
+		3BAC63511D4710A60019E670 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC63501D4710A60019E670 /* CoreLocation.framework */; };
 		BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1994AD1D40197E0015E93D /* AVKit.framework */; };
 		BA1994B11D4073950015E93D /* MySongListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B01D4073950015E93D /* MySongListsViewController.m */; };
 		BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B31D4074000015E93D /* PersonalInfoViewController.m */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3BAC634E1D46F2260019E670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BAC63501D4710A60019E670 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA1994AD1D40197E0015E93D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		BA1994AF1D4073950015E93D /* MySongListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySongListsViewController.h; sourceTree = "<group>"; };
 		BA1994B01D4073950015E93D /* MySongListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySongListsViewController.m; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BAC63511D4710A60019E670 /* CoreLocation.framework in Frameworks */,
 				BA5FC68E1D42FDBF002434E4 /* MapKit.framework in Frameworks */,
 				BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */,
 			);
@@ -111,6 +114,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BAC63521D4710B60019E670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BAC63501D4710A60019E670 /* CoreLocation.framework */,
+				BA5FC68D1D42FDBF002434E4 /* MapKit.framework */,
+				BA1994AD1D40197E0015E93D /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA3BB5F21D40802F00FD3D61 /* Mood */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +168,7 @@
 		BAFD6D7E1D3DCE4000E87EAC = {
 			isa = PBXGroup;
 			children = (
-				BA5FC68D1D42FDBF002434E4 /* MapKit.framework */,
-				BA1994AD1D40197E0015E93D /* AVKit.framework */,
+				3BAC63521D4710B60019E670 /* Frameworks */,
 				BAFD6D891D3DCE4000E87EAC /* SunnyRainy */,
 				BAFD6DA61D3DCE4000E87EAC /* SunnyRainyTests */,
 				BAFD6DB11D3DCE4000E87EAC /* SunnyRainyUITests */,

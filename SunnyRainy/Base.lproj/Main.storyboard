@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="XXu-HZ-6Vg">
-                                <rect key="frame" x="236" y="114" width="128" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="XXu-HZ-6Vg">
+                                <rect key="frame" x="215" y="114" width="170" height="170"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bBG-8v-ueo"/>
@@ -38,8 +38,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny 30 °C / 86 °F " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-1e-oW4">
-                                <rect key="frame" x="165" y="292" width="271" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-1e-oW4">
+                                <rect key="frame" x="287" y="334" width="27" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -55,8 +55,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="S U N N Y R A I N Y" id="lLd-vE-Y7D"/>
                     <connections>
+                        <outlet property="imgWeather" destination="XXu-HZ-6Vg" id="Ikm-bf-AQE"/>
                         <outlet property="lblWeather" destination="7yk-1e-oW4" id="5kz-6b-rdh"/>
-                        <outlet property="weatherImage" destination="XXu-HZ-6Vg" id="sQH-k6-8ye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -584,11 +584,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Personal Info-->
+        <!--Me-->
         <scene sceneID="YgW-nV-rf5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3A8-l9-QeB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Personal Info" image="me-120" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="me-120" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X79-Bh-YMN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -626,6 +626,7 @@
     <resources>
         <image name="Add User Group Man Man Filled-50" width="50" height="50"/>
         <image name="Radar Filled-50" width="50" height="50"/>
+        <image name="clear-day" width="170" height="170"/>
         <image name="host-120" width="30" height="30"/>
         <image name="me-120" width="30" height="30"/>
         <image name="sun" width="128" height="128"/>

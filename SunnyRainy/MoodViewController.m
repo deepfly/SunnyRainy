@@ -9,13 +9,12 @@
 #import "MoodViewController.h"
 
 @interface MoodViewController ()
-@property (strong, nonatomic) IBOutlet UITextView *temperatureText;
-@property (strong, nonatomic) IBOutlet UIImageView *weatherImage;
-@property (strong, nonatomic) IBOutlet UIView *playerContainer;
 
 @end
 
 @implementation MoodViewController
+
+CLLocationManager *locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +23,12 @@
                        forBarPosition:UIBarPositionAny
                            barMetrics:UIBarMetricsDefault];
     [navigationBar setShadowImage:[UIImage new]];
+    
+    // Init locationManager
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [locationManager startUpdatingLocation];
     
     [self getLocalWeather];
 }
@@ -34,18 +39,27 @@
 }
 
 - (void) getLocalWeather {
+    // retrieve latitude & longitude
+    float latitude = locationManager.location.coordinate.latitude;
+    float longitude = locationManager.location.coordinate.longitude;
+    NSDictionary *params = @{
+                             @"latitude": [[NSNumber numberWithFloat:latitude] stringValue],
+                             @"longitude": [[NSNumber numberWithFloat:longitude] stringValue]
+                             };
+    
     // retrieve the api host, e.g. http://127.0.0.1:8000/api/
     NSString *api_host = [[NSUserDefaults standardUserDefaults] valueForKey:@"api_host"];
-    NSString *api_url = [api_host stringByAppendingString:@"weather"];
-    //NSLog(@"api_host: %@\napi_url: %@", api_host, api_url);
+    NSString *api_path = [api_host stringByAppendingString:@"weather"];
+    NSString *api_url = [api_path stringByAppendingString:[self buildQueryStringFromDictionary:params]];
+    NSLog(@"api_url: %@", api_url);
     NSURL *url = [NSURL URLWithString: api_url];
     
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             //NSLog(@"dict:\n %@", dict);
-            NSString* weather_icon = dict[@"result"][@"currently"][@"icon"];
-            float temp_farenheit = [dict[@"result"][@"currently"][@"temperature"] floatValue];
+            NSString* weather_icon = dict[@"result"][@"icon"];
+            float temp_farenheit = [dict[@"result"][@"temperature"] floatValue];
             float temp_celsius = (temp_farenheit - 32 ) / 1.8;
             int temp_f = temp_farenheit + 0.5; // Round it
             int temp_c = temp_celsius + 0.5; // Round it
@@ -53,6 +67,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.lblWeather.text = weather_str;
+                self.imgWeather.image = [UIImage imageNamed:weather_icon];
             });
         }
         if( error) {
@@ -60,6 +75,17 @@
         }
     }];
     [task resume];
+}
+
+-(NSString *) buildQueryStringFromDictionary:(NSDictionary *)parameters {
+    NSString *urlVars = @"";
+    for (NSString *key in parameters) {
+        NSString *value = parameters[key];
+        value = [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+        NSString *tmp = [NSString stringWithFormat:@"%@%@=%@", urlVars.length > 0 ? @"&": @"", key, value];
+        urlVars = [urlVars stringByAppendingString:tmp];
+    }
+    return [NSString stringWithFormat:@"%@%@", urlVars ? @"?" : @"", urlVars ? urlVars : @""];
 }
 
 @end

@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import <AVKit/AVKit.h>
 #import <MediaPlayer/MediaPlayer.h>.
 #import <AVFoundation/AVAudioPlayer.h> 
 
 @interface MoodViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgWeather;
 @property (weak, nonatomic) IBOutlet UILabel *lblWeather;
 
 @end
