@@ -51,6 +51,7 @@
     NSInteger *user_id = 1;
     NSString *api_str = [NSString stringWithFormat:@"user/%i/songs", user_id];
     NSString *api_url = [api_host stringByAppendingString:api_str];
+    NSLog(@"api_url: %@", api_url);
     NSURL *url = [NSURL URLWithString: api_url];
     
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
