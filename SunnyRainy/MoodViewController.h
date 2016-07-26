@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVKit/AVKit.h>
-#import <MediaPlayer/MediaPlayer.h>. 
+#import <MediaPlayer/MediaPlayer.h>.
 #import <AVFoundation/AVAudioPlayer.h> 
 
 @interface MoodViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *lblWeather;
 
 @end
 

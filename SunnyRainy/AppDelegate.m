@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // set the api_host
+    [[NSUserDefaults standardUserDefaults] setValue:@"http://127.0.0.1:8000/api/" forKey:@"api_host"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     return YES;
 }
 

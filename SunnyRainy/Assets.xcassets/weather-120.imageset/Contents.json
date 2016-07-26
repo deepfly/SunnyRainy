@@ -6,11 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Radar-50.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "weather-120.png",
       "scale" : "3x"
     }
   ],
