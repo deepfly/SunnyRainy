@@ -36,16 +36,13 @@
 
     float latitude = clm.location.coordinate.latitude;
     float longitude = clm.location.coordinate.longitude;
-//    _anno = [[MKPointAnnotation alloc]init];
-//    _anno.coordinate = [_mapView userLocation].coordinate;
-//    _anno.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
-//    [_mapView addAnnotation:_anno];
     
-//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(_anno.coordinate, 2016.0f, 2016.0f);
-//    MKCoordinateRegion adjusted = [_mapView regionThatFits:region];
-//    [_mapView setRegion:adjusted animated:YES];
-//    [_mapView selectAnnotation:_anno animated:YES];
+    _first = 0;
 }
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    _first = 0;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -53,16 +50,19 @@
 }
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.02;
-    span.longitudeDelta = 0.02;
-    CLLocationCoordinate2D location;
-    location.latitude = aUserLocation.coordinate.latitude;
-    location.longitude = aUserLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [aMapView setRegion:region animated:YES];
+    if (_first == 0) {
+        MKCoordinateRegion region;
+        MKCoordinateSpan span;
+        span.latitudeDelta = 0.02;
+        span.longitudeDelta = 0.02;
+        CLLocationCoordinate2D location;
+        location.latitude = aUserLocation.coordinate.latitude;
+        location.longitude = aUserLocation.coordinate.longitude;
+        region.span = span;
+        region.center = location;
+        [aMapView setRegion:region animated:YES];
+        _first = 1;
+    }
 }
 
 /*

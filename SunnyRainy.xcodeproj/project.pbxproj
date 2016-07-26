@@ -15,7 +15,6 @@
 		BA1994BA1D4075890015E93D /* MoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B91D4075890015E93D /* MoodViewController.m */; };
 		BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */; };
 		BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB5F91D40949600FD3D61 /* PortraitCell.m */; };
-		BA4044D81D4319270026CFEF /* CreateHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4044D71D4319270026CFEF /* CreateHostViewController.m */; };
 		BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */; };
 		BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5FC68B1D42FC3B002434E4 /* FindController.m */; };
 		BA5FC68E1D42FDBF002434E4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5FC68D1D42FDBF002434E4 /* MapKit.framework */; };
@@ -59,8 +58,6 @@
 		BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNicknameController.m; sourceTree = "<group>"; };
 		BA3BB5F81D40949600FD3D61 /* PortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitCell.h; sourceTree = "<group>"; };
 		BA3BB5F91D40949600FD3D61 /* PortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitCell.m; sourceTree = "<group>"; };
-		BA4044D61D4319270026CFEF /* CreateHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateHostViewController.h; sourceTree = "<group>"; };
-		BA4044D71D4319270026CFEF /* CreateHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateHostViewController.m; sourceTree = "<group>"; };
 		BA4044DC1D431E850026CFEF /* ChooseSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongViewController.h; sourceTree = "<group>"; };
 		BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongViewController.m; sourceTree = "<group>"; };
 		BA5FC68A1D42FC3B002434E4 /* FindController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindController.h; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 			children = (
 				BA5FC68A1D42FC3B002434E4 /* FindController.h */,
 				BA5FC68B1D42FC3B002434E4 /* FindController.m */,
-				BA4044D61D4319270026CFEF /* CreateHostViewController.h */,
-				BA4044D71D4319270026CFEF /* CreateHostViewController.m */,
 				BA4044DC1D431E850026CFEF /* ChooseSongViewController.h */,
 				BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */,
 			);
@@ -351,7 +346,6 @@
 				BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */,
 				BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */,
 				BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */,
-				BA4044D81D4319270026CFEF /* CreateHostViewController.m in Sources */,
 				BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
