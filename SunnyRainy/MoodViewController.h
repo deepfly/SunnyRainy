@@ -12,7 +12,7 @@
 #import <AVFoundation/AVAudioPlayer.h> 
 #import <Spotify/Spotify.h>
 
-@interface MoodViewController : UIViewController <SPTAudioStreamingDelegate>
+@interface MoodViewController : UIViewController <SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgWeather;
 @property (weak, nonatomic) IBOutlet UILabel *lblWeather;

@@ -22,6 +22,7 @@
 @implementation MoodViewController
 
 CLLocationManager *locationManager;
+bool userClickPause;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,6 +58,7 @@ CLLocationManager *locationManager;
             self.btnPlay.hidden = NO;
             self.btnFavor.hidden = NO;
             self.btnNext.hidden = NO;
+            userClickPause = NO;
         }
     }
 }
@@ -125,6 +127,9 @@ CLLocationManager *locationManager;
             int temp_c = temp_celsius + 0.5; // Round it
             NSString *weather_str = [NSString stringWithFormat:@"%@\n%d °C / %d °F", weather_icon, temp_c, temp_f];
             
+            // Already got the longitude & latitude, save the battery power
+            [locationManager stopUpdatingHeading];
+            
             // Already logged in to Spotify, trigger the player
             NSString *spotify_token = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_token"];
             if(spotify_token != nil) {
@@ -160,8 +165,10 @@ CLLocationManager *locationManager;
 
 - (IBAction)playPauseSong:(id)sender {
     if([self.player isPlaying]) {
+        userClickPause = YES;
         [self.btnPlay setBackgroundImage:[UIImage imageNamed:@"ctrl-play"] forState:UIControlStateNormal];
     } else {
+        userClickPause = NO;
         [self.btnPlay setBackgroundImage:[UIImage imageNamed:@"ctrl-pause"] forState:UIControlStateNormal];
     }
     [self.player setIsPlaying:!self.player.isPlaying callback:nil];
@@ -199,6 +206,7 @@ CLLocationManager *locationManager;
     // Get the player instance
     self.player = [SPTAudioStreamingController sharedInstance];
     self.player.delegate = self;
+    self.player.playbackDelegate = self;
     // Start the player (will start a thread)
     NSString *spotify_client_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_client_id"];
     [self.player startWithClientId:spotify_client_id error:nil];
@@ -241,6 +249,15 @@ CLLocationManager *locationManager;
         }
     }];
     [task resume];
+}
+
+- (void)audioStreaming:(SPTAudioStreamingController *)audioStreaming didChangePlaybackStatus:(BOOL)isPlaying {
+    //NSLog(@"isPlaying: %i, userClickPause: %i", isPlaying, userClickPause);
+    if(!isPlaying && !userClickPause) { // Real End of a track
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self nextSong:nil];
+        });
+    }
 }
 
 @end
