@@ -45,30 +45,100 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTI-F2-WKn">
-                                <rect key="frame" x="196" y="420" width="208" height="50"/>
-                                <state key="normal" backgroundImage="facebook-login-blue"/>
+                                <rect key="frame" x="178" y="420" width="244" height="44"/>
+                                <state key="normal" backgroundImage="login-button-spotify"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sO9-en-0ov">
+                                <rect key="frame" x="268" y="484" width="64" height="64"/>
+                                <state key="normal" backgroundImage="ctrl-play"/>
+                                <connections>
+                                    <action selector="playPauseSong:" destination="9pv-A4-QxB" eventType="touchUpInside" id="koE-Fu-Hkj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw7-n4-mms">
+                                <rect key="frame" x="168" y="484" width="64" height="64"/>
+                                <state key="normal" backgroundImage="ctrl-plus"/>
+                                <connections>
+                                    <action selector="favorSong:" destination="9pv-A4-QxB" eventType="touchUpInside" id="VsO-MS-m1w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k0-ny-tEI">
+                                <rect key="frame" x="368" y="484" width="64" height="64"/>
+                                <state key="normal" backgroundImage="ctrl-next"/>
+                                <connections>
+                                    <action selector="nextSong:" destination="9pv-A4-QxB" eventType="touchUpInside" id="GUM-VU-5ka"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XXu-HZ-6Vg" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="5cF-O8-PPN"/>
                             <constraint firstItem="7yk-1e-oW4" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="5rB-N4-Vtt"/>
+                            <constraint firstItem="sO9-en-0ov" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="7me-Oe-KV8"/>
                             <constraint firstItem="BTI-F2-WKn" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nd3-fI-OP0"/>
                             <constraint firstItem="7yk-1e-oW4" firstAttribute="top" secondItem="XXu-HZ-6Vg" secondAttribute="bottom" constant="50" id="Ogb-lz-vZ5"/>
+                            <constraint firstItem="sO9-en-0ov" firstAttribute="leading" secondItem="Sw7-n4-mms" secondAttribute="trailing" constant="36" id="Qp6-yu-gt6"/>
                             <constraint firstItem="BTI-F2-WKn" firstAttribute="top" secondItem="7yk-1e-oW4" secondAttribute="bottom" constant="50" id="Sul-WP-Qa5"/>
+                            <constraint firstItem="sO9-en-0ov" firstAttribute="top" secondItem="BTI-F2-WKn" secondAttribute="bottom" constant="20" id="YZ1-Dd-3pq"/>
+                            <constraint firstItem="0k0-ny-tEI" firstAttribute="centerY" secondItem="sO9-en-0ov" secondAttribute="centerY" id="afP-G3-5er"/>
+                            <constraint firstItem="0k0-ny-tEI" firstAttribute="leading" secondItem="sO9-en-0ov" secondAttribute="trailing" constant="36" id="bxm-JB-7JZ"/>
+                            <constraint firstItem="sO9-en-0ov" firstAttribute="centerY" secondItem="Sw7-n4-mms" secondAttribute="centerY" id="vkp-nF-t0d"/>
                             <constraint firstItem="XXu-HZ-6Vg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="znQ-G1-TeE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="S U N N Y R A I N Y" id="lLd-vE-Y7D"/>
                     <connections>
+                        <outlet property="btnFavor" destination="Sw7-n4-mms" id="K2s-hx-Q9k"/>
                         <outlet property="btnLogin" destination="BTI-F2-WKn" id="RPC-rF-h2L"/>
+                        <outlet property="btnNext" destination="0k0-ny-tEI" id="9wc-Mc-UJb"/>
+                        <outlet property="btnPlay" destination="sO9-en-0ov" id="hkE-zp-Ldy"/>
                         <outlet property="imgWeather" destination="XXu-HZ-6Vg" id="Ikm-bf-AQE"/>
                         <outlet property="lblWeather" destination="7yk-1e-oW4" id="5kz-6b-rdh"/>
+                        <segue destination="H0h-w3-DwC" kind="presentation" identifier="showLogin" id="paI-HL-cp6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1627.5" y="-320"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="hms-2j-58q">
+            <objects>
+                <viewController id="H0h-w3-DwC" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cYO-io-dOn"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7p-MF-0Oh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dut-v4-x4i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S U N N Y R A I N Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbt-Hb-lJB">
+                                <rect key="frame" x="160" y="120" width="280" height="40"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD4-hj-6LW">
+                                <rect key="frame" x="196" y="275" width="208" height="50"/>
+                                <state key="normal" backgroundImage="facebook-login-blue"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dbt-Hb-lJB" firstAttribute="centerX" secondItem="Dut-v4-x4i" secondAttribute="centerX" id="8aG-qX-bTZ"/>
+                            <constraint firstItem="wD4-hj-6LW" firstAttribute="centerX" secondItem="Dut-v4-x4i" secondAttribute="centerX" id="VR6-5e-1rr"/>
+                            <constraint firstItem="wD4-hj-6LW" firstAttribute="centerY" secondItem="Dut-v4-x4i" secondAttribute="centerY" id="pkT-1H-wyV"/>
+                            <constraint firstItem="Dbt-Hb-lJB" firstAttribute="top" secondItem="cYO-io-dOn" secondAttribute="bottom" constant="100" id="tAo-Ga-taQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="wD4-hj-6LW" id="c6X-hS-fzH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKo-VN-HAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="-214"/>
         </scene>
         <!--My Favourites-->
         <scene sceneID="9hl-Db-TxT">
@@ -90,7 +160,7 @@
                                             <rect key="frame" x="15" y="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -100,7 +170,7 @@
                                             <rect key="frame" x="15" y="25" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -255,14 +325,14 @@
                                                     <rect key="frame" x="15" y="5" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pm4-ds-odT">
                                                     <rect key="frame" x="15" y="25" width="31" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -292,8 +362,9 @@
                     <connections>
                         <outlet property="imgAvatar" destination="HZM-Qf-PUI" id="r8q-qd-zga"/>
                         <outlet property="tableView" destination="b37-NJ-Um9" id="54u-N6-IED"/>
-                        <segue destination="Hmw-OL-cYe" kind="push" identifier="myFavourite" id="u1y-TR-0Zl"/>
-                        <segue destination="71h-oc-0q8" kind="push" identifier="changeName" id="A5e-vo-beh"/>
+                        <segue destination="Hmw-OL-cYe" kind="show" identifier="showFavorite" id="u1y-TR-0Zl"/>
+                        <segue destination="71h-oc-0q8" kind="show" identifier="changeName" id="A5e-vo-beh"/>
+                        <segue destination="H0h-w3-DwC" kind="presentation" identifier="showLogin" id="geV-4d-lS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -460,7 +531,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jze-8b-JBq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.25098039215686274" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -518,9 +589,16 @@
         <image name="Add User Group Man Man Filled-50" width="50" height="50"/>
         <image name="Radar Filled-50" width="50" height="50"/>
         <image name="clear-day" width="170" height="170"/>
+        <image name="ctrl-next" width="64" height="64"/>
+        <image name="ctrl-play" width="64" height="64"/>
+        <image name="ctrl-plus" width="64" height="64"/>
         <image name="facebook-login-blue" width="208" height="50"/>
         <image name="host-120" width="30" height="30"/>
+        <image name="login-button-spotify" width="244" height="44"/>
         <image name="me-120" width="30" height="30"/>
         <image name="weather-120" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="paI-HL-cp6"/>
+    </inferredMetricsTieBreakers>
 </document>

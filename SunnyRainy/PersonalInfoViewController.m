@@ -7,6 +7,7 @@
 //
 
 #import "PersonalInfoViewController.h"
+#import <Spotify/Spotify.h>
 
 @interface PersonalInfoViewController ()
 
@@ -35,7 +36,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -46,14 +47,17 @@
     }
     
     NSInteger idx = [indexPath row];
-    if (idx == 0){
+    if (idx == 0) {
         NSString *user_name = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_name"];
         cell.detailTextLabel.text = @"Name";
         cell.textLabel.text = user_name;
-    } else if(idx == 1){
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else if(idx == 1) {
         cell.textLabel.text = @"Favorite Songs";
         cell.detailTextLabel.text = @"Songs favored in Mood Player";
+    } else if(idx == 2) {
+        cell.textLabel.text = @"Log out";
+        cell.textLabel.textColor = [UIColor redColor];
+        cell.detailTextLabel.text = @"";
     }
     
     return cell;
@@ -62,13 +66,22 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger idx = [indexPath row];
-    if(idx == 0){
+    if(idx == 0) {
         [self performSegueWithIdentifier:@"changeName" sender:self];
-    } else if (idx == 1){
-        [self performSegueWithIdentifier:@"myFavourite" sender:self];
+    } else if (idx == 1) {
+        [self performSegueWithIdentifier:@"showFavorite" sender:self];
+    } else if (idx == 2) {
+        [self clearUserInfo];
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
     [tableView cellForRowAtIndexPath:indexPath].selected = false;
+}
+
+- (void) clearUserInfo {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_id"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"spotify_token"];
+    [[SPTAudioStreamingController sharedInstance] logout];
 }
 
 @end

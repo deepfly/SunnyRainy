@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BA2EFA11D47EEAF00E55153 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2EFA01D47EEAF00E55153 /* LoginViewController.m */; };
+		3BA2EFA31D47FDF000E55153 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2EFA21D47FDF000E55153 /* Spotify.framework */; };
+		3BA2EFA51D47FED700E55153 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2EFA41D47FED700E55153 /* AVFoundation.framework */; };
+		3BA2EFA71D47FEDE00E55153 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2EFA61D47FEDE00E55153 /* SystemConfiguration.framework */; };
 		3BAC634F1D46F2260019E670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BAC634E1D46F2260019E670 /* Assets.xcassets */; };
 		3BAC63511D4710A60019E670 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC63501D4710A60019E670 /* CoreLocation.framework */; };
 		3BAC63541D471D5A0019E670 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC63531D471D5A0019E670 /* FBSDKCoreKit.framework */; };
@@ -49,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BA2EF9F1D47EEAF00E55153 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3BA2EFA01D47EEAF00E55153 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3BA2EFA21D47FDF000E55153 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		3BA2EFA41D47FED700E55153 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3BA2EFA61D47FEDE00E55153 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3BAC634E1D46F2260019E670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BAC63501D4710A60019E670 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3BAC63531D471D5A0019E670 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -93,9 +102,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA2EFA71D47FEDE00E55153 /* SystemConfiguration.framework in Frameworks */,
+				3BA2EFA51D47FED700E55153 /* AVFoundation.framework in Frameworks */,
 				3BAC63511D4710A60019E670 /* CoreLocation.framework in Frameworks */,
 				3BAC63541D471D5A0019E670 /* FBSDKCoreKit.framework in Frameworks */,
 				3BAC63581D471D6E0019E670 /* FBSDKShareKit.framework in Frameworks */,
+				3BA2EFA31D47FDF000E55153 /* Spotify.framework in Frameworks */,
 				3BAC63561D471D640019E670 /* FBSDKLoginKit.framework in Frameworks */,
 				BA5FC68E1D42FDBF002434E4 /* MapKit.framework in Frameworks */,
 				BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */,
@@ -123,6 +135,9 @@
 		3BAC63521D4710B60019E670 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BA2EFA61D47FEDE00E55153 /* SystemConfiguration.framework */,
+				3BA2EFA41D47FED700E55153 /* AVFoundation.framework */,
+				3BA2EFA21D47FDF000E55153 /* Spotify.framework */,
 				3BAC63591D47213F0019E670 /* Bolts.framework */,
 				3BAC63571D471D6E0019E670 /* FBSDKShareKit.framework */,
 				3BAC63551D471D640019E670 /* FBSDKLoginKit.framework */,
@@ -198,6 +213,8 @@
 				BA3BB5F41D40804500FD3D61 /* PersonalInfo */,
 				BA3BB5F31D40803F00FD3D61 /* Find */,
 				BA3BB5F21D40802F00FD3D61 /* Mood */,
+				3BA2EF9F1D47EEAF00E55153 /* LoginViewController.h */,
+				3BA2EFA01D47EEAF00E55153 /* LoginViewController.m */,
 				BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */,
 				BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */,
 				3BAC634E1D46F2260019E670 /* Assets.xcassets */,
@@ -374,6 +391,7 @@
 				BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */,
 				BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */,
 				BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */,
+				3BA2EFA11D47EEAF00E55153 /* LoginViewController.m in Sources */,
 				BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +540,7 @@
 				INFOPLIST_FILE = SunnyRainy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -538,6 +557,7 @@
 				INFOPLIST_FILE = SunnyRainy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = CMU.SunnyRainy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
