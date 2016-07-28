@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // set the api_host
-    [[NSUserDefaults standardUserDefaults] setValue:@"http://127.0.0.1:8000/api/" forKey:@"api_host"];
+    [[NSUserDefaults standardUserDefaults] setValue:@"http://54.174.86.88/api/" forKey:@"api_host"];
     // set the spotify client ID
     [[NSUserDefaults standardUserDefaults] setValue:@"be36ff5a78084c0c8c8af109cdbb284a" forKey:@"spotify_client_id"];
     [[NSUserDefaults standardUserDefaults] setValue:@"sunny-rainy-app-login://callback" forKey:@"spotify_client_callback"];
