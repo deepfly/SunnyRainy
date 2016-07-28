@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5196371D4A9B9D004A335D /* ChangeHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5196361D4A9B9D004A335D /* ChangeHostViewController.m */; };
 		3BA2EFA11D47EEAF00E55153 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2EFA01D47EEAF00E55153 /* LoginViewController.m */; };
 		3BA2EFA31D47FDF000E55153 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2EFA21D47FDF000E55153 /* Spotify.framework */; };
 		3BA2EFA51D47FED700E55153 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2EFA41D47FED700E55153 /* AVFoundation.framework */; };
@@ -22,7 +23,6 @@
 		BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B31D4074000015E93D /* PersonalInfoViewController.m */; };
 		BA1994B71D4074B30015E93D /* MySongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B61D4074B30015E93D /* MySongListViewController.m */; };
 		BA1994BA1D4075890015E93D /* MoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B91D4075890015E93D /* MoodViewController.m */; };
-		BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */; };
 		BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB5F91D40949600FD3D61 /* PortraitCell.m */; };
 		BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */; };
 		BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5FC68B1D42FC3B002434E4 /* FindController.m */; };
@@ -53,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B5196351D4A9B9D004A335D /* ChangeHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeHostViewController.h; sourceTree = "<group>"; };
+		3B5196361D4A9B9D004A335D /* ChangeHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeHostViewController.m; sourceTree = "<group>"; };
 		3BA2EF9F1D47EEAF00E55153 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3BA2EFA01D47EEAF00E55153 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3BA2EFA21D47FDF000E55153 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
@@ -73,8 +75,6 @@
 		BA1994B61D4074B30015E93D /* MySongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySongListViewController.m; sourceTree = "<group>"; };
 		BA1994B81D4075890015E93D /* MoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodViewController.h; sourceTree = "<group>"; };
 		BA1994B91D4075890015E93D /* MoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodViewController.m; sourceTree = "<group>"; };
-		BA3BB5F51D40810300FD3D61 /* ChangeNicknameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNicknameController.h; sourceTree = "<group>"; };
-		BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNicknameController.m; sourceTree = "<group>"; };
 		BA3BB5F81D40949600FD3D61 /* PortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitCell.h; sourceTree = "<group>"; };
 		BA3BB5F91D40949600FD3D61 /* PortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitCell.m; sourceTree = "<group>"; };
 		BA4044DC1D431E850026CFEF /* ChooseSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongViewController.h; sourceTree = "<group>"; };
@@ -178,10 +178,10 @@
 				BA1994B01D4073950015E93D /* MySongListsViewController.m */,
 				BA1994B51D4074B30015E93D /* MySongListViewController.h */,
 				BA1994B61D4074B30015E93D /* MySongListViewController.m */,
-				BA3BB5F51D40810300FD3D61 /* ChangeNicknameController.h */,
-				BA3BB5F61D40810300FD3D61 /* ChangeNicknameController.m */,
 				BA3BB5F81D40949600FD3D61 /* PortraitCell.h */,
 				BA3BB5F91D40949600FD3D61 /* PortraitCell.m */,
+				3B5196351D4A9B9D004A335D /* ChangeHostViewController.h */,
+				3B5196361D4A9B9D004A335D /* ChangeHostViewController.m */,
 			);
 			name = PersonalInfo;
 			sourceTree = "<group>";
@@ -388,11 +388,11 @@
 				BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */,
 				BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */,
 				BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */,
+				3B5196371D4A9B9D004A335D /* ChangeHostViewController.m in Sources */,
 				BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */,
 				BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */,
 				BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */,
 				3BA2EFA11D47EEAF00E55153 /* LoginViewController.m in Sources */,
-				BA3BB5F71D40810300FD3D61 /* ChangeNicknameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

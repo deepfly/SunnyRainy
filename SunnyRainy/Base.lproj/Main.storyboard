@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--S U N N Y R A I N Y-->
@@ -194,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="2614.5" y="583"/>
         </scene>
-        <!--Change Nickname-->
+        <!--Change Host-->
         <scene sceneID="reb-CL-5m3">
             <objects>
-                <viewController id="71h-oc-0q8" customClass="ChangeNicknameController" sceneMemberID="viewController">
+                <viewController id="71h-oc-0q8" customClass="ChangeHostViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oeR-cd-uSL"/>
                         <viewControllerLayoutGuide type="bottom" id="ckn-Ns-c8V"/>
@@ -206,64 +207,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your new nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bd9-6S-gcb">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="7bD-QA-Dxx"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your API host here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmQ-5g-nsS">
+                                <rect key="frame" x="20" y="89" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="7bD-QA-Dxx"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="7bD-QA-Dxx"/>
-                                    </mask>
-                                </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-zd-r13">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWT-sP-hSN">
+                                <rect key="frame" x="283" y="129" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveHost:" destination="71h-oc-0q8" eventType="touchUpInside" id="u8i-A7-HIJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bd9-6S-gcb" firstAttribute="top" secondItem="HbL-zd-r13" secondAttribute="top" id="1yX-zc-oha"/>
-                            <constraint firstItem="bd9-6S-gcb" firstAttribute="leading" secondItem="HbL-zd-r13" secondAttribute="leading" constant="150" id="CIj-7s-U4X"/>
-                            <constraint firstItem="HbL-zd-r13" firstAttribute="top" secondItem="Icf-xA-I1o" secondAttribute="top" constant="80" id="F3i-qu-dm6"/>
-                            <constraint firstItem="HbL-zd-r13" firstAttribute="leading" secondItem="Icf-xA-I1o" secondAttribute="leading" constant="20" id="jKT-W9-6bK"/>
+                            <constraint firstItem="RmQ-5g-nsS" firstAttribute="top" secondItem="oeR-cd-uSL" secondAttribute="bottom" constant="25" id="1Gk-Wn-fr4"/>
+                            <constraint firstItem="ZWT-sP-hSN" firstAttribute="centerX" secondItem="Icf-xA-I1o" secondAttribute="centerX" id="BWo-3u-eag"/>
+                            <constraint firstItem="RmQ-5g-nsS" firstAttribute="centerX" secondItem="Icf-xA-I1o" secondAttribute="centerX" id="DxP-Ui-xGC"/>
+                            <constraint firstItem="ZWT-sP-hSN" firstAttribute="top" secondItem="RmQ-5g-nsS" secondAttribute="bottom" constant="10" id="MoQ-Vr-6Md"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RmQ-5g-nsS" secondAttribute="trailing" id="R3P-SL-9Ua"/>
+                            <constraint firstItem="RmQ-5g-nsS" firstAttribute="leading" secondItem="Icf-xA-I1o" secondAttribute="leadingMargin" id="yeO-R6-ci2"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="bd9-6S-gcb"/>
-                                <exclude reference="HbL-zd-r13"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="1yX-zc-oha"/>
-                                <exclude reference="CIj-7s-U4X"/>
-                                <exclude reference="F3i-qu-dm6"/>
-                                <exclude reference="jKT-W9-6bK"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="bd9-6S-gcb"/>
-                                <include reference="HbL-zd-r13"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="1yX-zc-oha"/>
-                                <include reference="CIj-7s-U4X"/>
-                                <include reference="F3i-qu-dm6"/>
-                                <include reference="jKT-W9-6bK"/>
+                                <exclude reference="DxP-Ui-xGC"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Nickname" id="jf4-K2-dSX"/>
+                    <navigationItem key="navigationItem" title="Change Host" id="jf4-K2-dSX"/>
+                    <connections>
+                        <outlet property="btnSave" destination="ZWT-sP-hSN" id="siz-rZ-KQt"/>
+                        <outlet property="txtHost" destination="RmQ-5g-nsS" id="m20-kE-jKz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tm5-yb-Hqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -363,7 +339,7 @@
                         <outlet property="imgAvatar" destination="HZM-Qf-PUI" id="r8q-qd-zga"/>
                         <outlet property="tableView" destination="b37-NJ-Um9" id="54u-N6-IED"/>
                         <segue destination="Hmw-OL-cYe" kind="show" identifier="showFavorite" id="u1y-TR-0Zl"/>
-                        <segue destination="71h-oc-0q8" kind="show" identifier="changeName" id="A5e-vo-beh"/>
+                        <segue destination="71h-oc-0q8" kind="show" identifier="changeHost" id="A5e-vo-beh"/>
                         <segue destination="H0h-w3-DwC" kind="presentation" identifier="showLogin" id="geV-4d-lS3"/>
                     </connections>
                 </viewController>
