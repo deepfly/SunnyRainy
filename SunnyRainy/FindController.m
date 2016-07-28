@@ -26,6 +26,7 @@
     [_mapView setScrollEnabled:YES];
     [_mapView setDelegate:self];
     _mapView.showsUserLocation = YES;
+    
     clm = [[CLLocationManager alloc] init];
     clm.distanceFilter = kCLDistanceFilterNone;
     clm.desiredAccuracy = kCLLocationAccuracyHundredMeters;
@@ -65,6 +66,10 @@
     }
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -75,7 +80,40 @@
 }
 */
 - (IBAction)showHosts:(id)sender {
+    [self retriveHosts];
+}
+
+- (void) retriveHosts {
+    // retrieve the api host, e.g. http://127.0.0.1:8000/api/
+    NSString *api_host = [[NSUserDefaults standardUserDefaults] valueForKey:@"api_host"];
+    NSString *api_str = [NSString stringWithFormat:@"host/scan"];
+    NSString *api_url = [api_host stringByAppendingString:api_str];
+    NSLog(@"api_url: %@", api_url);
+    NSURL *url = [NSURL URLWithString: api_url];
     
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            _hosts = dict[@"hosts"];
+            
+            for (NSDictionary *hostinfo in _hosts) {
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+                float lat = [(NSNumber *)hostinfo[@"latitude"] floatValue];
+                float lon = [(NSNumber *)hostinfo[@"longitude"] floatValue];
+                NSLog(@"%f, %f", lat, lon);
+                annotation.coordinate = CLLocationCoordinate2DMake(lat, lon);
+                [_mapView addAnnotation:annotation];
+            }
+            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.mapView ref];
+//            });
+        }
+        if( error) {
+            NSLog(@"error: %@", error);
+        }
+    }];
+    [task resume];
 }
 
 - (IBAction)createHost:(id)sender {

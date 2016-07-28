@@ -19,7 +19,6 @@
 		3BAC63581D471D6E0019E670 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC63571D471D6E0019E670 /* FBSDKShareKit.framework */; };
 		3BAC635A1D47213F0019E670 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC63591D47213F0019E670 /* Bolts.framework */; };
 		BA1994AE1D40197E0015E93D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1994AD1D40197E0015E93D /* AVKit.framework */; };
-		BA1994B11D4073950015E93D /* MySongListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B01D4073950015E93D /* MySongListsViewController.m */; };
 		BA1994B41D4074000015E93D /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B31D4074000015E93D /* PersonalInfoViewController.m */; };
 		BA1994B71D4074B30015E93D /* MySongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B61D4074B30015E93D /* MySongListViewController.m */; };
 		BA1994BA1D4075890015E93D /* MoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1994B91D4075890015E93D /* MoodViewController.m */; };
@@ -67,8 +66,6 @@
 		3BAC63571D471D6E0019E670 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		3BAC63591D47213F0019E670 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		BA1994AD1D40197E0015E93D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		BA1994AF1D4073950015E93D /* MySongListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySongListsViewController.h; sourceTree = "<group>"; };
-		BA1994B01D4073950015E93D /* MySongListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySongListsViewController.m; sourceTree = "<group>"; };
 		BA1994B21D4074000015E93D /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
 		BA1994B31D4074000015E93D /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
 		BA1994B51D4074B30015E93D /* MySongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySongListViewController.h; sourceTree = "<group>"; };
@@ -174,8 +171,6 @@
 			children = (
 				BA1994B21D4074000015E93D /* PersonalInfoViewController.h */,
 				BA1994B31D4074000015E93D /* PersonalInfoViewController.m */,
-				BA1994AF1D4073950015E93D /* MySongListsViewController.h */,
-				BA1994B01D4073950015E93D /* MySongListsViewController.m */,
 				BA1994B51D4074B30015E93D /* MySongListViewController.h */,
 				BA1994B61D4074B30015E93D /* MySongListViewController.m */,
 				BA3BB5F81D40949600FD3D61 /* PortraitCell.h */,
@@ -382,7 +377,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1994B11D4073950015E93D /* MySongListsViewController.m in Sources */,
 				BA1994BA1D4075890015E93D /* MoodViewController.m in Sources */,
 				BA1994B71D4074B30015E93D /* MySongListViewController.m in Sources */,
 				BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */,
