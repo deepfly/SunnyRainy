@@ -22,7 +22,8 @@
 @implementation MoodViewController
 
 CLLocationManager *locationManager;
-bool userClickPause;
+bool userClickPause = NO;
+bool favoredButton = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -161,6 +162,63 @@ bool userClickPause;
 
 
 - (IBAction)favorSong:(id)sender {
+    NSLog(@"favoredButton: %i", favoredButton);
+    if(favoredButton) {
+        // Delete Favor mark, but keep the song in the server
+        NSString *song_uri = [self.weatherSongs objectAtIndex:self.curSongIdx][@"uri"];
+        NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, song_uri];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:uniq_id];
+        [self changeIntoNormalButton];
+    } else {
+        // Get Use ID
+        NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        // Get song info
+        NSDictionary *parameters = [self.weatherSongs objectAtIndex:self.curSongIdx];
+        
+        // Save it to server
+        // retrieve the api host, e.g. http://127.0.0.1:8000/api/
+        NSString *api_host = [[NSUserDefaults standardUserDefaults] valueForKey:@"api_host"];
+        NSString *api_url = [api_host stringByAppendingString:@"song/ensure"];
+        NSURL *url = [NSURL URLWithString: api_url];
+        NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+        NSString * params = [NSString stringWithFormat:@"user_id=%@&title=%@&url=%@&artist=%@&duration=%@", user_id, parameters[@"title"], parameters[@"uri"], parameters[@"artist"], parameters[@"duration"]];
+        [urlRequest setHTTPMethod:@"POST"];
+        [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+        NSURLSessionDataTask * task =[defaultSession dataTaskWithRequest:urlRequest
+           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+               if( error) {
+                   NSLog(@"error: %@", error);
+               } else {
+                   NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                   NSLog(@"favor song response: %@", dict);
+                   
+                   // Local Favor Mark
+                   NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, parameters[@"uri"]];
+                   [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:uniq_id];
+                   
+                   // Change the Favor Button
+                   dispatch_async(dispatch_get_main_queue(), ^{
+                       [self changeIntoFavoredButton];
+                   });
+                   
+               }
+           }];
+        [task resume];
+    }
+}
+
+- (void) changeIntoFavoredButton {
+    favoredButton = YES;
+    [self.btnFavor setBackgroundImage:[UIImage imageNamed:@"ctrl-plus-pink"] forState:UIControlStateNormal]; // Pink it!
+}
+
+- (void) changeIntoNormalButton {
+    favoredButton = NO;
+    [self.btnFavor setBackgroundImage:[UIImage imageNamed:@"ctrl-plus"] forState:UIControlStateNormal]; // Unpink it!
 }
 
 - (IBAction)playPauseSong:(id)sender {
@@ -191,6 +249,21 @@ bool userClickPause;
             return;
         }
     }];
+    
+    // Check Favor mark
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, song_uri];
+    NSString *favor_mark = [[NSUserDefaults standardUserDefaults] valueForKey:uniq_id];
+    if (favor_mark != nil) { // It's a favored song
+        // Change the Favor Button
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self changeIntoFavoredButton];
+        });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self changeIntoNormalButton];
+        });
+    }
 }
 
 - (void)loginUsingSession:(SPTSession *)session {
@@ -236,6 +309,7 @@ bool userClickPause;
                                        @"title": item[@"name"],
                                        @"uri": item[@"uri"],
                                        @"artist": item[@"artists"][0][@"name"],
+                                       @"duration": [@([item[@"duration_ms"] intValue] / 1000) stringValue],
                                        };
                 [self.weatherSongs addObject:song];
             }
