@@ -115,11 +115,14 @@ CLLocationManager *locManager;
     NSString *sectionTitle = [_songSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
     NSDictionary *songInfo = [sectionSongs objectAtIndex:indexPath.row];
+    
     NSString *songName = songInfo[@"title"];
     cell.textLabel.text = songName;
     NSString *length = songInfo[@"duration"];
     int lint = [length intValue];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Length: %i min %i s", lint/60, lint%60];
+    NSString *artist = songInfo[@"artist"];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Length: %i min %i s  Artist: %@", lint/60, lint%60, artist];
     cell.tag = [((NSString *)songInfo[@"id"]) intValue];
     
     return cell;

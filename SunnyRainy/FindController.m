@@ -16,15 +16,16 @@
 
 @implementation FindController
 
+float MAP_SPAN = 0.05;
+float AVAILABLE_RADIUS = 2000;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [CLLocationManager requestAlwaysAuthorization];
     // Do any additional setup after loading the view.
-    
-    [_mapView setZoomEnabled:YES];
-    _mapView.delegate = self;
-    [_mapView setScrollEnabled:YES];
     [_mapView setDelegate:self];
+    [_mapView setZoomEnabled:YES];
+    [_mapView setScrollEnabled:YES];
+    
     _mapView.showsUserLocation = YES;
     
     clm = [[CLLocationManager alloc] init];
@@ -38,12 +39,17 @@
     float latitude = clm.location.coordinate.latitude;
     float longitude = clm.location.coordinate.longitude;
     
+    [self.curLocButton.layer setBorderWidth:0.2];
+    [self.curLocButton.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    
+    [self.curLocButton.layer setShadowOffset:CGSizeMake(5, 5)];
+    [self.curLocButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    [self.curLocButton.layer setShadowOpacity:0.5];
+
+    [self retriveHosts];
+    
     _first = 0;
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    _first = 0;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -52,17 +58,25 @@
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
     if (_first == 0) {
+        _first = 1;
         MKCoordinateRegion region;
         MKCoordinateSpan span;
-        span.latitudeDelta = 0.02;
-        span.longitudeDelta = 0.02;
+        
+        span.latitudeDelta = MAP_SPAN;
+        span.longitudeDelta = MAP_SPAN;
+        
         CLLocationCoordinate2D location;
         location.latitude = aUserLocation.coordinate.latitude;
         location.longitude = aUserLocation.coordinate.longitude;
+        
         region.span = span;
         region.center = location;
-        [aMapView setRegion:region animated:YES];
-        _first = 1;
+        [_mapView setRegion:region animated:YES];
+        
+        //add a circle around user's location to indicate whether a music host is available or not
+        [_mapView removeOverlays:[_mapView overlays]];
+        MKCircle *circle = [MKCircle circleWithCenterCoordinate:location radius:AVAILABLE_RADIUS];
+        [_mapView addOverlay:circle];
     }
 }
 
@@ -96,6 +110,8 @@
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             _hosts = dict[@"hosts"];
             
+            [_mapView removeAnnotations:_mapView.annotations];
+            
             for (NSDictionary *hostinfo in _hosts) {
                 MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
                 float lat = [(NSNumber *)hostinfo[@"latitude"] floatValue];
@@ -105,19 +121,42 @@
                 [_mapView addAnnotation:annotation];
             }
             
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.mapView ref];
-//            });
+            [_mapView setCenterCoordinate:_mapView.region.center animated:YES];
         }
         if( error) {
             NSLog(@"error: %@", error);
         }
     }];
-    [task resume];
+    [task resume];  
 }
 
 - (IBAction)createHost:(id)sender {
-//    [self performSegueWithIdentifier:@"createHost" sender:self];
+    [self performSegueWithIdentifier:@"createHost" sender:self];
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKCircleRenderer *circleView = [[MKCircleRenderer alloc] initWithOverlay:overlay];
+//    circleView.strokeColor = [UIColor blueColor];
+    circleView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.1];
+    return circleView;
+}
+
+- (IBAction)zoomToCurrentLocation:(id)sender {
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    
+    span.latitudeDelta = MAP_SPAN;
+    span.longitudeDelta = MAP_SPAN;
+    
+    region.span = span;
+    region.center = [[_mapView userLocation] coordinate];
+    [_mapView setRegion:region animated:YES];
+    
+    //add a circle around user's location to indicate whether a music host is available or not
+    [_mapView removeOverlays:[_mapView overlays]];
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:_mapView.userLocation.coordinate radius:AVAILABLE_RADIUS];
+    [_mapView addOverlay:circle];
 }
 
 @end

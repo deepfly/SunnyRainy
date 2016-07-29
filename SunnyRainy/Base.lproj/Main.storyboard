@@ -341,74 +341,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DYp-kV-08V">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-QP-i41">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-sy-0mR">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="Radar Filled-50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVE-Ll-GxE">
+                                <rect key="frame" x="547" y="494" width="16" height="22"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="3" height="2"/>
+                                <state key="normal" image="Define Location-50">
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="showHosts:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="QTy-dv-KHS"/>
+                                    <action selector="zoomToCurrentLocation:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="BTw-Nv-GW0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16V-Q2-SbQ">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m1-lZ-GIz">
+                                <rect key="frame" x="28" y="70" width="50" height="50"/>
+                                <state key="normal" image="Radar Filled-50"/>
+                                <connections>
+                                    <action selector="showHosts:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="zST-Id-3Kt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbC-TY-xYa">
+                                <rect key="frame" x="520" y="80" width="50" height="50"/>
                                 <state key="normal" image="Add User Group Man Man Filled-50"/>
                                 <connections>
-                                    <action selector="createHost:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="ucZ-Hg-mOU"/>
-                                    <segue destination="e3L-rU-MMh" kind="push" id="F2v-Pa-ZuW"/>
+                                    <action selector="createHost:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="zFM-Te-Ukg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="DYp-kV-08V" secondAttribute="bottom" id="0O9-TH-PyR"/>
-                            <constraint firstItem="mb6-sy-0mR" firstAttribute="top" secondItem="Muy-KK-McA" secondAttribute="top" constant="80" id="1xR-3c-anM"/>
-                            <constraint firstAttribute="trailing" secondItem="16V-Q2-SbQ" secondAttribute="trailing" constant="30" id="3Di-cN-onR"/>
-                            <constraint firstItem="DYp-kV-08V" firstAttribute="top" secondItem="Muy-KK-McA" secondAttribute="top" id="5bj-ku-aAl"/>
-                            <constraint firstItem="mb6-sy-0mR" firstAttribute="leading" secondItem="Muy-KK-McA" secondAttribute="leading" constant="30" id="BQB-CC-gI1"/>
-                            <constraint firstItem="16V-Q2-SbQ" firstAttribute="top" secondItem="Muy-KK-McA" secondAttribute="top" constant="80" id="hNW-n8-tRV"/>
-                            <constraint firstItem="DYp-kV-08V" firstAttribute="leading" secondItem="Muy-KK-McA" secondAttribute="leading" id="iEs-we-D5h"/>
-                            <constraint firstAttribute="trailing" secondItem="DYp-kV-08V" secondAttribute="trailing" id="rxM-wo-yFp"/>
+                            <constraint firstAttribute="trailing" secondItem="qVE-Ll-GxE" secondAttribute="trailing" constant="30" id="1Hm-DL-ial"/>
+                            <constraint firstItem="5m1-lZ-GIz" firstAttribute="leading" secondItem="Muy-KK-McA" secondAttribute="leading" constant="30" id="5IL-5g-kGn"/>
+                            <constraint firstItem="Rmd-QP-i41" firstAttribute="top" secondItem="Muy-KK-McA" secondAttribute="top" id="BIP-yw-3Gr"/>
+                            <constraint firstItem="Rmd-QP-i41" firstAttribute="leading" secondItem="Muy-KK-McA" secondAttribute="leading" id="CYE-JT-f5c"/>
+                            <constraint firstAttribute="bottom" secondItem="qVE-Ll-GxE" secondAttribute="bottom" constant="80" id="Qzy-G4-LQP"/>
+                            <constraint firstAttribute="bottom" secondItem="Rmd-QP-i41" secondAttribute="bottom" id="XC4-kg-nEg"/>
+                            <constraint firstItem="5m1-lZ-GIz" firstAttribute="top" secondItem="Muy-KK-McA" secondAttribute="top" constant="80" id="aPp-sx-dsk"/>
+                            <constraint firstAttribute="trailing" secondItem="Rmd-QP-i41" secondAttribute="trailing" id="aa8-0n-QHd"/>
+                            <constraint firstItem="PbC-TY-xYa" firstAttribute="top" secondItem="Muy-KK-McA" secondAttribute="top" constant="80" id="cuI-T5-d3p"/>
+                            <constraint firstAttribute="trailing" secondItem="PbC-TY-xYa" secondAttribute="trailing" constant="30" id="gec-J8-QOU"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="DYp-kV-08V"/>
-                                <exclude reference="mb6-sy-0mR"/>
-                                <exclude reference="16V-Q2-SbQ"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="3Di-cN-onR"/>
-                                <exclude reference="hNW-n8-tRV"/>
-                                <exclude reference="1xR-3c-anM"/>
-                                <exclude reference="BQB-CC-gI1"/>
-                                <exclude reference="0O9-TH-PyR"/>
-                                <exclude reference="5bj-ku-aAl"/>
-                                <exclude reference="iEs-we-D5h"/>
-                                <exclude reference="rxM-wo-yFp"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="DYp-kV-08V"/>
-                                <include reference="mb6-sy-0mR"/>
-                                <include reference="16V-Q2-SbQ"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="3Di-cN-onR"/>
-                                <include reference="hNW-n8-tRV"/>
-                                <include reference="1xR-3c-anM"/>
-                                <include reference="BQB-CC-gI1"/>
-                                <include reference="0O9-TH-PyR"/>
-                                <include reference="5bj-ku-aAl"/>
-                                <include reference="iEs-we-D5h"/>
-                                <include reference="rxM-wo-yFp"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Find" id="RbT-7D-V3F"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="mapView" destination="DYp-kV-08V" id="R5w-sU-9wY"/>
+                        <outlet property="curLocButton" destination="qVE-Ll-GxE" id="NeC-Wv-R7n"/>
+                        <outlet property="mapView" destination="Rmd-QP-i41" id="6XN-s1-yoj"/>
+                        <segue destination="e3L-rU-MMh" kind="push" identifier="createHost" id="GC1-kS-iNJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cv-cX-Qkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -525,6 +507,7 @@
     </scenes>
     <resources>
         <image name="Add User Group Man Man Filled-50" width="50" height="50"/>
+        <image name="Define Location-50" width="25" height="25"/>
         <image name="Radar Filled-50" width="50" height="50"/>
         <image name="clear-day" width="170" height="170"/>
         <image name="ctrl-next" width="64" height="64"/>
@@ -537,6 +520,6 @@
         <image name="weather-120" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="geV-4d-lS3"/>
+        <segue reference="paI-HL-cp6"/>
     </inferredMetricsTieBreakers>
 </document>
