@@ -132,7 +132,9 @@ CLLocationManager *locManager;
     NSString *sectionTitle = [_songSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
     NSString *songName = [sectionSongs objectAtIndex:indexPath.row][@"title"];
-    NSString *msg = [NSString stringWithFormat:@"Do you really want to use \"%@\" to create your host?", songName];
+    NSString *artist = [sectionSongs objectAtIndex:indexPath.row][@"artist"];
+    
+    NSString *msg = [NSString stringWithFormat:@"Do you really want to use \"%@\" by \"%@\" to create your host?", songName, artist];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Choose this song"
                                                     message:msg delegate:self cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"OK", nil];
