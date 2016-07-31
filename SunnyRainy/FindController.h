@@ -15,5 +15,7 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) MKPointAnnotation *anno;
 @property (nonatomic) NSInteger *first;
+@property (copy, nonatomic) NSArray* hosts;
+@property (strong, nonatomic) IBOutlet UIButton *curLocButton;
 
 @end

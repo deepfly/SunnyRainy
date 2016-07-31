@@ -14,42 +14,35 @@
 
 @implementation ChooseSongViewController
 
+CLLocationManager *locManager;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _songsDict = [NSMutableDictionary new];
     [self getUserSongs];
-//    self.songs = @[@"Camel", @"Cockatoo", @"Dog", @"Donkey", @"Emu", @"Giraffe", @"Greater Rhea", @"Hippopotamus", @"Horse", @"Koala", @"Lion", @"Llama", @"Manatus", @"Meerkat", @"Panda", @"Peacock", @"Pig", @"Platypus", @"Polar Bear", @"Rhinoceros", @"Seagull", @"Tasmania Devil", @"Whale", @"Whale Shark", @"Wombat", @"Buffalo", @"Bear", @"Black Swan"];
-//    _songs = [_songs sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-//    
-//
-//    
-//    for (NSString *str in _songs) {
-//        NSString *key = [[str substringToIndex:1] capitalizedString];
-//        NSMutableArray *arr;
-//        if([_songsDict objectForKey:key]){
-//            arr = [_songsDict objectForKey:key];
-//        } else {
-//            arr = [NSMutableArray new];
-//        }
-//        NSDictionary *toAdd = [NSDictionary dictionaryWithObject:str forKey:@"title"];
-//        [arr addObject:toAdd];
-//        [_songsDict setObject:arr forKey:key];
-//    }
-//    
-//    _songSectionTitles = [[_songsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    // Init locationManager
+    if(locManager == nil) {
+        locManager = [[CLLocationManager alloc] init];
+        locManager.distanceFilter = kCLDistanceFilterNone;
+        locManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+        [locManager startUpdatingLocation];
+    }
 }
 
 - (void) getUserSongs {
+    // Check Facebook Login
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    if(user_id == nil) {
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
+    
     // retrieve the api host, e.g. http://127.0.0.1:8000/api/
     NSString *api_host = [[NSUserDefaults standardUserDefaults] valueForKey:@"api_host"];
-    NSInteger *user_id = 1;
-    NSString *api_str = [NSString stringWithFormat:@"user/%i/songs", user_id];
+    NSString *api_str = [NSString stringWithFormat:@"user/%@/songs", user_id];
     NSString *api_url = [api_host stringByAppendingString:api_str];
     NSLog(@"api_url: %@", api_url);
     NSURL *url = [NSURL URLWithString: api_url];
@@ -122,11 +115,14 @@
     NSString *sectionTitle = [_songSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
     NSDictionary *songInfo = [sectionSongs objectAtIndex:indexPath.row];
+    
     NSString *songName = songInfo[@"title"];
     cell.textLabel.text = songName;
     NSString *length = songInfo[@"duration"];
     int lint = [length intValue];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Length: %i min %i s", lint/60, lint%60];
+    NSString *artist = songInfo[@"artist"];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Length: %i min %i s  Artist: %@", lint/60, lint%60, artist];
     cell.tag = [((NSString *)songInfo[@"id"]) intValue];
     
     return cell;
@@ -136,7 +132,9 @@
     NSString *sectionTitle = [_songSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionSongs = [_songsDict objectForKey:sectionTitle];
     NSString *songName = [sectionSongs objectAtIndex:indexPath.row][@"title"];
-    NSString *msg = [NSString stringWithFormat:@"Do you really want to use \"%@\" to create your host?", songName];
+    NSString *artist = [sectionSongs objectAtIndex:indexPath.row][@"artist"];
+    
+    NSString *msg = [NSString stringWithFormat:@"Do you really want to use \"%@\" by \"%@\" to create your host?", songName, artist];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Choose this song"
                                                     message:msg delegate:self cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"OK", nil];
@@ -157,9 +155,19 @@
 }
 
 - (void) createHostWithSong:(NSInteger *)song_id{
-    NSInteger *user_id = 1;
-    float latitude = 40.0;
-    float longitude = 140.0;
+    // Check Facebook Login
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    if(user_id == nil) {
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
+    
+    // retrieve latitude & longitude
+    float latitude = locManager.location.coordinate.latitude;
+    float longitude = locManager.location.coordinate.longitude;
+    NSDictionary *location = @{
+                             @"latitude": [[NSNumber numberWithFloat:latitude] stringValue],
+                             @"longitude": [[NSNumber numberWithFloat:longitude] stringValue]
+                             };
     
     
     // retrieve the api host, e.g. http://127.0.0.1:8000/api/
@@ -167,9 +175,13 @@
     NSString *api_str = [NSString stringWithFormat:@"host/create"];
     NSString *api_url = [api_host stringByAppendingString:api_str];
     NSURL *url = [NSURL URLWithString: api_url];
+    NSLog(@"api_url: %@", api_url);
+    
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
 //    NSString * params =@"user_id=1&song_id=1&latitude=40&longitude=140";
-    NSString * params = [NSString stringWithFormat:@"user_id=%i&song_id=%i&latitude=%f&longitude=%f", user_id, song_id, latitude, longitude];
+    NSString * params = [NSString stringWithFormat:@"user_id=%@&song_id=%i&latitude=%@&longitude=%@", user_id, song_id, location[@"latitude"], location[@"longitude"]];
+    NSLog(params);
+    
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -178,6 +190,7 @@
     NSURLSessionDataTask * task =[defaultSession dataTaskWithRequest:urlRequest
                                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (data) {
+//            NSLog(data);
             NSString *msg = [NSString stringWithFormat:@"You have created a music host."];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
                                                             message:msg delegate:self cancelButtonTitle:@"OK"
