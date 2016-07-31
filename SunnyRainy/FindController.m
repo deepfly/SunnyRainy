@@ -56,16 +56,13 @@ float AVAILABLE_RADIUS = 2000;
     // Dispose of any resources that can be recreated.
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
-    annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return annotationView;
+    [mapView deselectAnnotation:view.annotation animated:YES];
+    if (![(MKAnnotationView *)view.annotation isKindOfClass:[MKUserLocation class]]){
+//        MapAnnotation *annotation = view.annotation;
+//        NSLog( annotation.title);
+    }
 }
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
@@ -130,6 +127,7 @@ float AVAILABLE_RADIUS = 2000;
                 float lon = [(NSNumber *)hostinfo[@"longitude"] floatValue];
                 NSLog(@"%f, %f", lat, lon);
                 annotation.coordinate = CLLocationCoordinate2DMake(lat, lon);
+                annotation.title = hostinfo[@"id" ];
                 [_mapView addAnnotation:annotation];
             }
             
