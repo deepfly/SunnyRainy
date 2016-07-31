@@ -7,6 +7,7 @@
 //
 
 #import "PersonalInfoViewController.h"
+#import <Spotify/Spotify.h>
 
 @interface PersonalInfoViewController ()
 
@@ -17,8 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.PersonalInfo = @[@"Ziping Zheng", @"@ZipingMobile"];
-//    personTableView.scroll
+    NSString *avatar = [[NSUserDefaults standardUserDefaults] valueForKey:@"avatar"];
+    self.imgAvatar.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:avatar]]];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,51 +32,36 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 3;
-    } else {
-        return 1;
-    }
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *simpleIdentifier = @"SimpleIdentifier";
-    if(indexPath.section == 0 && indexPath.row == 0){
-        simpleIdentifier = @"PortraitCell";
-    }
-    
+    NSString *simpleIdentifier = @"InfoCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleIdentifier];
-    
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleIdentifier];
     }
     
-    NSInteger *idx = [indexPath row];
-    if(indexPath.section == 0){
-        if (idx == 0) {
-            UIImageView *portraitView = ((PortraitCell *)cell).portraitImg;
-            portraitView.image = [UIImage imageNamed:@"sun_strong_bold"];
-            [portraitView.layer setBorderColor: [[UIColor blackColor] CGColor]];
-            [portraitView.layer setBorderWidth: 0.1];
-            portraitView.layer.cornerRadius = 10;
-            portraitView.clipsToBounds = YES;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.textLabel.text = [NSString stringWithFormat:@"Portrait:"];
-        } else if (idx == 1){
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.textLabel.text = [NSString stringWithFormat:@"Nick name: %@", _PersonalInfo[0]];
-        } else if (idx == 2){
-            cell.textLabel.text = [NSString stringWithFormat:@"Twitter account: %@", _PersonalInfo[1]];
-        }
-    } else if(indexPath.section == 1){
-        if (idx == 0) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.textLabel.text = [NSString stringWithFormat:@"My favourie lists"];
-        }
+    NSInteger idx = [indexPath row];
+    if (idx == 0) {
+        NSString *user_name = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_name"];
+        cell.detailTextLabel.text = @"Name";
+        cell.textLabel.text = user_name;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else if(idx == 1) {
+        cell.textLabel.text = @"Favorite Songs";
+        cell.detailTextLabel.text = @"Songs favored in Mood Player";
+    } else if(idx == 2) {
+        cell.textLabel.text = @"API Host";
+        cell.detailTextLabel.text = @"Server host of SunnyRainy";
+    } else if(idx == 3) {
+        cell.textLabel.text = @"Log out";
+        cell.textLabel.textColor = [UIColor redColor];
+        cell.detailTextLabel.text = @"";
     }
     
     return cell;
@@ -79,37 +69,23 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger *idx = [indexPath row];
-    if (indexPath.section == 0) {
-        if(idx == 0){
-            [self performSegueWithIdentifier:@"changePortrait" sender:self];
-        } else if(idx == 1){
-            [self performSegueWithIdentifier:@"changeName" sender:self];
-        }
-    } else if (indexPath.section == 1 && idx == 0){
-        [self performSegueWithIdentifier:@"myFavourite" sender:self];
+    NSInteger idx = [indexPath row];
+    if(idx == 2) {
+        [self performSegueWithIdentifier:@"changeHost" sender:self];
+    } else if (idx == 1) {
+        [self performSegueWithIdentifier:@"showFavorite" sender:self];
+    } else if (idx == 3) {
+        [self clearUserInfo];
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
     [tableView cellForRowAtIndexPath:indexPath].selected = false;
-    
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0 && indexPath.row == 0)
-        return 100;
-    
-    return 75;
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (section == 1) {
-        
-        return 25;
-    }
-    else
-        return 0;
-    
+- (void) clearUserInfo {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_id"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"spotify_token"];
+    [[SPTAudioStreamingController sharedInstance] logout];
 }
 
 @end

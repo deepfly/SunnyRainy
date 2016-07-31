@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ChooseSongViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ChooseSongViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property(copy, nonatomic) NSArray* songs;
-@property(nonatomic) NSInteger* selectedRow;
+@property(copy, nonatomic) NSMutableDictionary *songsDict;
+@property(copy, nonatomic) NSArray *songSectionTitles;
 
 @end

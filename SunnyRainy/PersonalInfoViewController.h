@@ -10,10 +10,8 @@
 #import "PortraitCell.h"
 
 @interface PersonalInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
-@property (strong, nonatomic) IBOutlet UITableView *personTableView;
-//@property (strong, nonatomic) IBOutlet UITableView *songTableView;
-@property(copy, nonatomic) NSArray* PersonalInfo;
+@property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

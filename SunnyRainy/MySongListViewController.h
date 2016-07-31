@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MySongListViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface MySongListViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property(copy, nonatomic) NSArray* songs;
+@property(copy, nonatomic) NSMutableDictionary *songsDict;
+@property(copy, nonatomic) NSArray *songSectionTitles;
 
 @end
