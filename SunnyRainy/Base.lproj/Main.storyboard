@@ -329,6 +329,59 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Song Playing-->
+        <scene sceneID="YCb-Xe-Xvf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgz-Ud-gop" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="u80-xu-74m" customClass="PlaySongViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pgV-YP-O7Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="w5X-Jr-ySG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="42P-u3-xit">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sf-XY-rMB">
+                                <rect key="frame" x="178" y="456" width="244" height="44"/>
+                                <state key="normal" backgroundImage="login-button-spotify"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBe-ZQ-jnx">
+                                <rect key="frame" x="268" y="386" width="64" height="64"/>
+                                <state key="normal" backgroundImage="ctrl-play"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdr-4I-xFQ">
+                                <rect key="frame" x="168" y="386" width="64" height="64"/>
+                                <state key="normal" backgroundImage="ctrl-plus"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6o-yp-3cz">
+                                <rect key="frame" x="368" y="386" width="64" height="64"/>
+                                <state key="normal" backgroundImage="ctrl-next"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="c6o-yp-3cz" firstAttribute="trailing" secondItem="ZBe-ZQ-jnx" secondAttribute="trailing" constant="100" id="3HP-Xl-DN3"/>
+                            <constraint firstItem="c6o-yp-3cz" firstAttribute="top" secondItem="ZBe-ZQ-jnx" secondAttribute="top" id="653-PZ-CJk"/>
+                            <constraint firstAttribute="bottom" secondItem="4sf-XY-rMB" secondAttribute="bottom" constant="100" id="AUi-xX-tCc"/>
+                            <constraint firstItem="4sf-XY-rMB" firstAttribute="bottom" secondItem="ZBe-ZQ-jnx" secondAttribute="bottom" constant="50" id="IWG-JO-3S6"/>
+                            <constraint firstItem="ZBe-ZQ-jnx" firstAttribute="centerX" secondItem="42P-u3-xit" secondAttribute="centerX" id="dW5-N6-D0b"/>
+                            <constraint firstItem="4sf-XY-rMB" firstAttribute="centerX" secondItem="42P-u3-xit" secondAttribute="centerX" id="mSX-0R-SBP"/>
+                            <constraint firstItem="ZBe-ZQ-jnx" firstAttribute="top" secondItem="Qdr-4I-xFQ" secondAttribute="top" id="tAR-V2-rX0"/>
+                            <constraint firstItem="ZBe-ZQ-jnx" firstAttribute="leading" secondItem="Qdr-4I-xFQ" secondAttribute="leading" constant="100" id="xmN-ym-34q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Song Playing" id="R6h-hi-067"/>
+                    <connections>
+                        <outlet property="buttonFavor" destination="Qdr-4I-xFQ" id="wdU-8k-UAM"/>
+                        <outlet property="buttonLogin" destination="4sf-XY-rMB" id="8cd-yn-eQx"/>
+                        <outlet property="buttonNext" destination="c6o-yp-3cz" id="zcp-YN-Ovt"/>
+                        <outlet property="buttonPlay" destination="ZBe-ZQ-jnx" id="I0h-Aq-hWH"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1668" y="-1831"/>
+        </scene>
         <!--Find-->
         <scene sceneID="cUQ-5f-K4O">
             <objects>
@@ -391,6 +444,7 @@
                         <outlet property="curLocButton" destination="qVE-Ll-GxE" id="NeC-Wv-R7n"/>
                         <outlet property="mapView" destination="Rmd-QP-i41" id="6XN-s1-yoj"/>
                         <segue destination="e3L-rU-MMh" kind="push" identifier="createHost" id="GC1-kS-iNJ"/>
+                        <segue destination="u80-xu-74m" kind="push" identifier="playSong" id="4oW-0s-NWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cv-cX-Qkx" userLabel="First Responder" sceneMemberID="firstResponder"/>

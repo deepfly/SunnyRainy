@@ -26,6 +26,7 @@
 		BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */; };
 		BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5FC68B1D42FC3B002434E4 /* FindController.m */; };
 		BA5FC68E1D42FDBF002434E4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5FC68D1D42FDBF002434E4 /* MapKit.framework */; };
+		BAAD8F761D4D8D3200BE9630 /* PlaySongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAD8F751D4D8D3200BE9630 /* PlaySongViewController.m */; };
 		BAFD6D8C1D3DCE4000E87EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8B1D3DCE4000E87EAC /* main.m */; };
 		BAFD6D8F1D3DCE4000E87EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD6D8E1D3DCE4000E87EAC /* AppDelegate.m */; };
 		BAFD6D981D3DCE4000E87EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD6D961D3DCE4000E87EAC /* Main.storyboard */; };
@@ -79,6 +80,8 @@
 		BA5FC68A1D42FC3B002434E4 /* FindController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindController.h; sourceTree = "<group>"; };
 		BA5FC68B1D42FC3B002434E4 /* FindController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindController.m; sourceTree = "<group>"; };
 		BA5FC68D1D42FDBF002434E4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BAAD8F741D4D8D3200BE9630 /* PlaySongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySongViewController.h; sourceTree = "<group>"; };
+		BAAD8F751D4D8D3200BE9630 /* PlaySongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySongViewController.m; sourceTree = "<group>"; };
 		BAFD6D871D3DCE4000E87EAC /* SunnyRainy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyRainy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFD6D8B1D3DCE4000E87EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAFD6D8D1D3DCE4000E87EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				BA5FC68B1D42FC3B002434E4 /* FindController.m */,
 				BA4044DC1D431E850026CFEF /* ChooseSongViewController.h */,
 				BA4044DD1D431E850026CFEF /* ChooseSongViewController.m */,
+				BAAD8F741D4D8D3200BE9630 /* PlaySongViewController.h */,
+				BAAD8F751D4D8D3200BE9630 /* PlaySongViewController.m */,
 			);
 			name = Find;
 			sourceTree = "<group>";
@@ -314,7 +319,7 @@
 				TargetAttributes = {
 					BAFD6D861D3DCE4000E87EAC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = GPQJ5LUQS2;
+						DevelopmentTeam = 9VUC3R8D65;
 					};
 					BAFD6DA21D3DCE4000E87EAC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -386,6 +391,7 @@
 				3B5196371D4A9B9D004A335D /* ChangeHostViewController.m in Sources */,
 				BA5FC68C1D42FC3B002434E4 /* FindController.m in Sources */,
 				BA4044DE1D431E850026CFEF /* ChooseSongViewController.m in Sources */,
+				BAAD8F761D4D8D3200BE9630 /* PlaySongViewController.m in Sources */,
 				BA3BB5FA1D40949600FD3D61 /* PortraitCell.m in Sources */,
 				3BA2EFA11D47EEAF00E55153 /* LoginViewController.m in Sources */,
 			);

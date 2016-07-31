@@ -61,7 +61,8 @@ float AVAILABLE_RADIUS = 2000;
     [mapView deselectAnnotation:view.annotation animated:YES];
     if (![(MKAnnotationView *)view.annotation isKindOfClass:[MKUserLocation class]]){
 //        MapAnnotation *annotation = view.annotation;
-//        NSLog( annotation.title);
+        NSLog( (MKAnnotationView *)view.annotation.title);
+        [self performSegueWithIdentifier:@"playSong" sender:(MKAnnotationView *)view.annotation];
     }
 }
 
@@ -93,15 +94,15 @@ float AVAILABLE_RADIUS = 2000;
     return YES;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+
 - (IBAction)showHosts:(id)sender {
     [self retriveHosts];
 }
@@ -127,7 +128,7 @@ float AVAILABLE_RADIUS = 2000;
                 float lon = [(NSNumber *)hostinfo[@"longitude"] floatValue];
                 NSLog(@"%f, %f", lat, lon);
                 annotation.coordinate = CLLocationCoordinate2DMake(lat, lon);
-                annotation.title = hostinfo[@"id" ];
+                annotation.title = [NSString stringWithFormat:@"%i", [(NSNumber *)hostinfo[@"id"] integerValue]];
                 [_mapView addAnnotation:annotation];
             }
             

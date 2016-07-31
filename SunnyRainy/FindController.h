@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PlaySongViewController.h"
 
 @interface FindController : UIViewController<MKMapViewDelegate>
 
