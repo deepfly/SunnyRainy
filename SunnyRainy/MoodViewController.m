@@ -24,6 +24,7 @@
 CLLocationManager *locationManager;
 bool userClickPause = NO;
 bool favoredButton = NO;
+bool playerInited = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -133,7 +134,7 @@ bool favoredButton = NO;
             
             // Already logged in to Spotify, trigger the player
             NSString *spotify_token = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_token"];
-            if(spotify_token != nil) {
+            if(spotify_token != nil && !playerInited) {
                 [self initSpotifyPlayer:spotify_token];
             }
             
@@ -285,6 +286,8 @@ bool favoredButton = NO;
     [self.player startWithClientId:spotify_client_id error:nil];
     // Login SDK before we can start playback
     [self.player loginWithAccessToken: accessToken];
+    
+    playerInited = YES;
 }
 
 - (void)audioStreamingDidLogin:(SPTAudioStreamingController *)audioStreaming {
