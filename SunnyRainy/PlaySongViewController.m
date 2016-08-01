@@ -42,32 +42,51 @@ bool playerInited2 = NO;
     // Dispose of any resources that can be recreated.
 }
 
-//- (void) toggleButtons {
-//    // Check Spotify Login
-//    NSString *spotify_token = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_token"];
-//    if(spotify_token == nil) {
-//        // Spotify connect button
-//        [self.buttonLogin addTarget:self action:@selector(connectButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-//        self.buttonLogin.hidden = NO;
-//        self.buttonPlay.hidden = YES;
-//        self.buttonFavor.hidden = YES;
-//        self.buttonNext.hidden = YES;
-//    } else {
-//        self.buttonLogin.hidden = YES;
-//        if(self.curSongIdx != -1) { // Very first appearance of this viewcontroller
-//            self.buttonPlay.hidden = NO;
-//            self.buttonFavor.hidden = NO;
-//            self.buttonNext.hidden = NO;
-//            userClickPause = NO;
-//        }
-//    }
-//}
+- (void) toggleButtons {
+    // Check Spotify Login
+    NSString *spotify_token = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_token"];
+    if(spotify_token == nil) {
+        // Spotify connect button
+        [self.buttonLogin addTarget:self action:@selector(connectButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        self.buttonLogin.hidden = NO;
+        self.buttonPlay.hidden = YES;
+        self.buttonFavor.hidden = YES;
+        self.buttonNext.hidden = YES;
+    } else {
+        self.buttonLogin.hidden = YES;
+        if(self.curSongIdx != -1) { // Very first appearance of this viewcontroller
+            self.buttonPlay.hidden = NO;
+            self.buttonFavor.hidden = NO;
+            self.buttonNext.hidden = NO;
+            userClickPause2 = NO;
+        }
+    }
+}
 
 - (void)viewDidAppear:(BOOL)animated {
-//    [self toggleButtons];
+    [self toggleButtons];
     
 //    [self getLocalWeather];
 }
+
+// Once the button is clicked, show the login dialog
+- (void)connectButtonClicked {
+    NSString *spotify_client_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_client_id"];
+    [[SPTAuth defaultInstance] setClientID: spotify_client_id];
+    NSString *spotify_client_callback = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_client_callback"];
+    [[SPTAuth defaultInstance] setRedirectURL:[NSURL URLWithString: spotify_client_callback]];
+    [[SPTAuth defaultInstance] setRequestedScopes:@[SPTAuthStreamingScope]];
+    
+    // Construct a login URL and open it
+    NSURL *loginURL = [[SPTAuth defaultInstance] loginURL];
+    
+    // Opening a URL in Safari close to application launch may trigger
+    // an iOS bug, so we wait a bit before doing so.
+    [[UIApplication sharedApplication] performSelector:@selector(openURL:)
+                                            withObject:loginURL afterDelay:0.1];
+}
+
+
 
 /*
 #pragma mark - Navigation
