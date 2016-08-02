@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "PlaySongViewController.h"
+#import "MoodViewController.h"
 
 @interface FindController : UIViewController<MKMapViewDelegate>
 
@@ -17,6 +18,8 @@
 @property (strong, nonatomic) MKPointAnnotation *anno;
 @property (nonatomic) NSInteger *first;
 @property (copy, nonatomic) NSArray* hosts;
+@property (copy, nonatomic) NSString* selectedHostID;
 @property (strong, nonatomic) IBOutlet UIButton *curLocButton;
+
 
 @end
