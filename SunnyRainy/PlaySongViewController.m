@@ -54,6 +54,10 @@ bool playerInited2 = NO;
     [self.player stop:nil];
 }
 
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -139,9 +143,58 @@ bool playerInited2 = NO;
     favoredButton2 = NO;
     [self.buttonFavor setBackgroundImage:[UIImage imageNamed:@"ctrl-plus"] forState:UIControlStateNormal]; // Unpink it!
 }
+- (IBAction)favorButtonClicked:(id)sender {
+    NSLog(@"favoredButton: %i", favoredButton2);
+    if(favoredButton2) {
+        // Delete Favor mark, but keep the song in the server
+        NSString *song_uri = [self.weatherSongs objectAtIndex:self.curSongIdx][@"uri"];
+        NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, song_uri];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:uniq_id];
+        [self changeIntoNormalButton];
+    } else {
+        // Get Use ID
+        NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        // Get song info
+        NSDictionary *parameters = [self.weatherSongs objectAtIndex:self.curSongIdx];
+        
+        // Save it to server
+        // retrieve the api host, e.g. http://127.0.0.1:8000/api/
+        NSString *api_host = [[NSUserDefaults standardUserDefaults] valueForKey:@"api_host"];
+        NSString *api_url = [api_host stringByAppendingString:@"song/ensure"];
+        NSURL *url = [NSURL URLWithString: api_url];
+        NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+        NSString * params = [NSString stringWithFormat:@"user_id=%@&title=%@&url=%@&artist=%@&duration=%@", user_id, parameters[@"title"], parameters[@"uri"], parameters[@"artist"], parameters[@"duration"]];
+        [urlRequest setHTTPMethod:@"POST"];
+        [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+        NSURLSessionDataTask * task =[defaultSession dataTaskWithRequest:urlRequest
+                                                       completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                           if( error) {
+                                                               NSLog(@"error: %@", error);
+                                                           } else {
+                                                               NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                                                               NSLog(@"favor song response: %@", dict);
+                                                               
+                                                               // Local Favor Mark
+                                                               NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, parameters[@"uri"]];
+                                                               [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:uniq_id];
+                                                               
+                                                               // Change the Favor Button
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [self changeIntoFavoredButton];
+                                                               });
+                                                               
+                                                           }
+                                                       }];
+        [task resume];
+    }
+}
 
 - (IBAction)nextSong:(id)sender {
-    NSLog(@"songs count: %i", _weatherSongs.count);
+//    NSLog(@"songs count: %i", _weatherSongs.count);
     if([self.weatherSongs count] == 0)
         return;
     
@@ -169,11 +222,11 @@ bool playerInited2 = NO;
     }];
     [task resume];
     
-    _label.text = [NSString stringWithFormat:@"%@ by %@",song[@"title"], song[@"artist"] ];
+    _label.text = [NSString stringWithFormat:@"%@\nby %@",song[@"title"], song[@"artist"] ];
     
     NSString *song_uri = song[@"uri"];
     NSURL *url = [NSURL URLWithString: song_uri];
-    NSLog(song_uri);
+//    NSLog(song_uri);
     [self.player playURI:url callback:^(NSError *error) {
         if (error != nil) {
             NSLog(@"Spotify player failed to play: %@", error);
@@ -236,7 +289,9 @@ bool playerInited2 = NO;
             NSDictionary *host = dict[@"host"];
             
             _songID = host[@"song_id"];
-//            _slotSongID = host[@"slot_song_id"];
+            NSString *creatorID = host[@"user_id"];
+            
+            [self retrieveHead:creatorID];
             [self retrieveSongURI:_songID];
         }
         
@@ -281,7 +336,7 @@ bool playerInited2 = NO;
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSLog(@"dict:\n %@", dict);
+//            NSLog(@"dict:\n %@", dict);
 //            for(NSDictionary* item in dict[@"tracks"][@"items"]) {
             NSDictionary *song = @{
                                    @"title": dict[@"name"],
@@ -304,6 +359,28 @@ bool playerInited2 = NO;
     [task resume];
 }
 
+- (void)retrieveHead:(NSString*)creatorID{
+    // retrieve the api host, e.g. http://127.0.0.1:8000/api/
+    NSString *api_host = [[NSUserDefaults standardUserDefaults] valueForKey:@"api_host"];
+    NSString *api_str = [NSString stringWithFormat:@"user/%@", creatorID];
+    NSString *api_url = [api_host stringByAppendingString:api_str];
+    NSLog(@"api_url: %@", api_url);
+    NSURL *url = [NSURL URLWithString: api_url];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSDictionary *user = dict[@"user"];
+            
+            self.headLabel.text = [NSString stringWithFormat:@"\n%@\ ' S  HOST", user[@"nickname"]];
+        }
+        
+        if( error) {
+            NSLog(@"error: %@", error);
+        }
+    }];
+    [task resume];
+}
 /*
 #pragma mark - Navigation
 

@@ -40,6 +40,9 @@
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSArray* songs = dict[@"songs"];
             for (NSDictionary *songinfo in songs) {
+                NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, songinfo[@"url"]];
+                if(![[NSUserDefaults standardUserDefaults] objectForKey:uniq_id]) continue;
+                
                 NSString *key = [[songinfo[@"title"] substringToIndex:1] capitalizedString];
                 NSMutableArray *arr;
                 if([_songsDict objectForKey:key]){
@@ -48,6 +51,7 @@
                     arr = [NSMutableArray new];
                     [_songsDict setObject:arr forKey:key];
                 }
+                
                 [arr addObject:songinfo];
             }
             _songSectionTitles = [[_songsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];

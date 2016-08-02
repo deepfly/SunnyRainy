@@ -52,6 +52,9 @@ CLLocationManager *locManager;
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSArray* songs = dict[@"songs"];
             for (NSDictionary *songinfo in songs) {
+                NSString *uniq_id = [NSString stringWithFormat:@"%@-%@", user_id, songinfo[@"url"]];
+                if(![[NSUserDefaults standardUserDefaults] objectForKey:uniq_id]) continue;
+                
                 NSString *key = [[songinfo[@"title"] substringToIndex:1] capitalizedString];
                 NSMutableArray *arr;
                 if([_songsDict objectForKey:key]){

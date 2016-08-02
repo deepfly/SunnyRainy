@@ -21,6 +21,10 @@
     NSString *avatar = [[NSUserDefaults standardUserDefaults] valueForKey:@"avatar"];
     self.imgAvatar.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:avatar]]];
     
+    [self.imgAvatar.layer setShadowOffset:CGSizeMake(5, 5)];
+    [self.imgAvatar.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    [self.imgAvatar.layer setShadowOpacity:0.5];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.tableView reloadData];

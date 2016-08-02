@@ -20,5 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonNext;
 @property (strong, nonatomic) IBOutlet UIImageView *imgView;
 @property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UILabel *headLabel;
+
 
 @end

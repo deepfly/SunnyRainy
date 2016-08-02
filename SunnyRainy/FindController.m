@@ -18,7 +18,7 @@
 @implementation FindController
 
 float MAP_SPAN = 0.05;
-float AVAILABLE_RADIUS = 2000;
+float AVAILABLE_RADIUS = 1000;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,6 +67,18 @@ float AVAILABLE_RADIUS = 2000;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
+    id<MKAnnotation> ann = [mapView.selectedAnnotations objectAtIndex:0];
+    CLLocationCoordinate2D coord = ann.coordinate;
+//    NSLog(@"coord: lan: %f, lon: %f", coord.latitude, coord.longitude);
+    CLLocation *col = [CLLocation alloc];
+    [col initWithLatitude:coord.latitude longitude:coord.longitude];
+    
+    CLLocationCoordinate2D coord2 = [_mapView userLocation].coordinate;
+//    NSLog(@"coord2: lan: %f, lon: %f", coord2.latitude, coord2.longitude);
+    CLLocation *col2 = [CLLocation alloc];
+    [col2 initWithLatitude:coord2.latitude longitude:coord2.longitude];
+    double distance = [col2 distanceFromLocation:col];
+    
     [mapView deselectAnnotation:view.annotation animated:YES];
     if (![(MKAnnotationView *)view.annotation isKindOfClass:[MKUserLocation class]]){
 //        MapAnnotation *annotation = view.annotation;
@@ -79,7 +91,17 @@ float AVAILABLE_RADIUS = 2000;
         
         NSLog( (MKAnnotationView *)view.annotation.title);
         _selectedHostID = (MKAnnotationView *)view.annotation.title;
-        [self performSegueWithIdentifier:@"playSong" sender:(MKAnnotationView *)view.annotation];
+        
+        
+        NSLog(@"dist: %f", distance);
+        if (distance > AVAILABLE_RADIUS) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Too far away"
+                                                            message:@"You need to get closer to join that music host" delegate:self cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        } else {
+            [self performSegueWithIdentifier:@"playSong" sender:nil];
+        }
     }
 }
 
