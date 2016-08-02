@@ -415,7 +415,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVE-Ll-GxE">
-                                <rect key="frame" x="485" y="435" width="85" height="85"/>
+                                <rect key="frame" x="528" y="478" width="42" height="42"/>
                                 <size key="titleShadowOffset" width="3" height="2"/>
                                 <state key="normal" image="compass"/>
                                 <connections>
@@ -423,14 +423,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m1-lZ-GIz">
-                                <rect key="frame" x="30" y="30" width="85" height="85"/>
+                                <rect key="frame" x="30" y="30" width="42" height="42"/>
                                 <state key="normal" image="host_scan"/>
                                 <connections>
                                     <action selector="showHosts:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="zST-Id-3Kt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbC-TY-xYa">
-                                <rect key="frame" x="485" y="30" width="85" height="85"/>
+                                <rect key="frame" x="528" y="30" width="42" height="42"/>
                                 <state key="normal" image="host_create"/>
                                 <connections>
                                     <action selector="createHost:" destination="Ukj-5H-o4E" eventType="touchUpInside" id="zFM-Te-Ukg"/>
@@ -596,14 +596,14 @@
     </scenes>
     <resources>
         <image name="clear-day" width="170" height="170"/>
-        <image name="compass" width="85" height="85"/>
+        <image name="compass" width="42" height="42"/>
         <image name="ctrl-next" width="64" height="64"/>
         <image name="ctrl-play" width="64" height="64"/>
         <image name="ctrl-plus" width="64" height="64"/>
         <image name="facebook-login-blue" width="208" height="50"/>
         <image name="host-120" width="30" height="30"/>
-        <image name="host_create" width="85" height="85"/>
-        <image name="host_scan" width="85" height="85"/>
+        <image name="host_create" width="42" height="42"/>
+        <image name="host_scan" width="42" height="42"/>
         <image name="login-button-spotify" width="244" height="44"/>
         <image name="me-120" width="30" height="30"/>
         <image name="weather-120" width="40" height="40"/>
