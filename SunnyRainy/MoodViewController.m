@@ -13,7 +13,6 @@
 
 @interface MoodViewController ()
 @property (nonatomic, strong) SPTSession *session;
-@property (nonatomic, strong) SPTAudioStreamingController *player;
 @property (nonatomic, strong) NSMutableArray *weatherSongs;
 @property (nonatomic, strong) NSString *curWeather;
 @property (nonatomic) NSInteger curSongIdx;

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnFavor;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UIButton *btnNext;
+@property (nonatomic, strong) SPTAudioStreamingController *player;
 
 - (IBAction)favorSong:(id)sender;
 - (IBAction)playPauseSong:(id)sender;

@@ -7,6 +7,7 @@
 //
 
 #import "FindController.h"
+#import "PlaySongViewController.h"
 
 @interface FindController () <MKMapViewDelegate>{
     CLLocationManager *clm;
@@ -21,6 +22,7 @@ float AVAILABLE_RADIUS = 2000;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     [_mapView setDelegate:self];
     [_mapView setZoomEnabled:YES];
@@ -51,6 +53,16 @@ float AVAILABLE_RADIUS = 2000;
     _first = 0;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    [navigationBar setHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    [navigationBar setHidden:NO];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -61,7 +73,15 @@ float AVAILABLE_RADIUS = 2000;
     [mapView deselectAnnotation:view.annotation animated:YES];
     if (![(MKAnnotationView *)view.annotation isKindOfClass:[MKUserLocation class]]){
 //        MapAnnotation *annotation = view.annotation;
+        UITabBarController *tabBar = (UITabBarController *) self.navigationController.tabBarController;
+//        [tabBar setSelectedIndex:0];
+        MoodViewController *fcontroller = (MoodViewController *)[[tabBar viewControllers][0] childViewControllers][0];
+        
+        if([fcontroller.player isPlaying])
+            [fcontroller playPauseSong:fcontroller];
+        
         NSLog( (MKAnnotationView *)view.annotation.title);
+        _selectedHostID = (MKAnnotationView *)view.annotation.title;
         [self performSegueWithIdentifier:@"playSong" sender:(MKAnnotationView *)view.annotation];
     }
 }
@@ -91,6 +111,17 @@ float AVAILABLE_RADIUS = 2000;
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    NSString *spotify_token = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotify_token"];
+    if (spotify_token == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Haven't login to Spotify"
+                                                        message:@"You need to log in to Spotify first to play song in a host" delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        //        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    
     return YES;
 }
 
@@ -100,11 +131,27 @@ float AVAILABLE_RADIUS = 2000;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UIBarButtonItem *newBackButton =
+    [[UIBarButtonItem alloc] initWithTitle:@""
+                                     style:UIBarButtonItemStyleBordered
+                                    target:nil
+                                    action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
+
     
+    if ([segue.identifier isEqualToString:@"playSong"]) {
+        PlaySongViewController* psvc = (PlaySongViewController*)segue.destinationViewController;
+        psvc.hostId = _selectedHostID;
+        
+    }
 }
 
 - (IBAction)showHosts:(id)sender {
     [self retriveHosts];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
+                                                    message:@"All music hosts nearby are retrieved" delegate:self cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void) retriveHosts {
