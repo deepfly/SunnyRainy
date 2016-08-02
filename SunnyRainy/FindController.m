@@ -41,9 +41,6 @@ float AVAILABLE_RADIUS = 2000;
     float latitude = clm.location.coordinate.latitude;
     float longitude = clm.location.coordinate.longitude;
     
-    [self.curLocButton.layer setBorderWidth:0.2];
-    [self.curLocButton.layer setBorderColor:[[UIColor grayColor] CGColor]];
-    
     [self.curLocButton.layer setShadowOffset:CGSizeMake(5, 5)];
     [self.curLocButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
     [self.curLocButton.layer setShadowOpacity:0.5];
