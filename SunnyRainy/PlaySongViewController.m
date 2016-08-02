@@ -50,6 +50,7 @@ bool playerInited2 = NO;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [self.navigationController popToRootViewControllerAnimated:YES];
     [self.player stop:nil];
 }
 

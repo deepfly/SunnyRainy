@@ -278,7 +278,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HZM-Qf-PUI">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HZM-Qf-PUI">
                                 <rect key="frame" x="180" y="74" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="YFA-Aj-VKs"/>
@@ -365,7 +365,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia1-9w-H8X">
                                 <rect key="frame" x="300" y="430" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -583,6 +583,10 @@
         <scene sceneID="ZKg-fN-ew5">
             <objects>
                 <viewController id="OWs-gO-iRs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Z0-0H-cu1"/>
+                        <viewControllerLayoutGuide type="bottom" id="h5W-hX-59l"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="39V-Ex-tYz">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,6 +612,6 @@
         <image name="weather-120" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="paI-HL-cp6"/>
+        <segue reference="geV-4d-lS3"/>
     </inferredMetricsTieBreakers>
 </document>
