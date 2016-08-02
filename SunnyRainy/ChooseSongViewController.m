@@ -33,6 +33,10 @@ CLLocationManager *locManager;
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void) getUserSongs {
     // Check Facebook Login
     NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];

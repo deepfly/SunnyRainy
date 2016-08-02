@@ -67,6 +67,10 @@
     [task resume];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     return _songSectionTitles;

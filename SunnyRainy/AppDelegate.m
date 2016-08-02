@@ -46,6 +46,11 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     // Trigger MoodViewController viewDidAppear
+    UINavigationController *naviController = [[((UINavigationController *) self.window.rootViewController) viewControllers] objectAtIndex:0];
+    MoodViewController *rootViewController = (MoodViewController*) naviController.visibleViewController;
+    if([rootViewController respondsToSelector:@selector(toggleButtons)]) {
+        [rootViewController toggleButtons];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

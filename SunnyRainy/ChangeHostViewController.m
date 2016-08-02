@@ -26,6 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
